@@ -4,41 +4,77 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Федерация альпинизма Нижегородской области</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&family=Raleway:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-	<main class="main-page">
-		<header class="main-page-header">
-			<div class="main-page-header__wrap">
-				<div class="fixed-header">
-					<img src="images/logo-big.svg" alt="">
-					<nav>
-						<ul class="menu">
-							<li class="menu__opening-point">Новичку </li>
-							<li class="menu__opening-point">База данных</li>
-							<li>Новости</li>
-							<li>Календарь</li>
-							<li class="menu__opening-point">О федерации</li>
-							<li>Контакты</li>
-						</ul>
-					</nav>
-				</div>
-				<strong class="main-page-header__title">
+	<header class="mp-header">
+		<div class="mp-header__wrap container">
+			<div class="fixed-header">
+				<img src="images/logo-big.svg" alt="">
+				<nav>
+					<ul class="menu">
+						<li class="menu__opening-point">Новичку </li>
+						<li class="menu__opening-point">База данных</li>
+						<li>Новости</li>
+						<li>Календарь</li>
+						<li class="menu__opening-point">О федерации</li>
+						<li>Контакты</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="mp-header__title">
+				<strong>
 					"Федерация альпинизма <br> Нижегородской области"
 				</strong>
-				<span class="main-page-header__subtitle">
+				<span>
 					Официальный сайт 
 				</span>
-				<div class="main-page-header__social-network">
-					<a href="">
-						<img src="images/header-vk.svg" alt="">
-					</a>
-					<a href="">
-						<img src="images/header-instagramm.svg" alt="">
-					</a>
-				</div>
+			</div>		
+			<div class="mp-header__icons">
+				<a href="">
+					<img src="images/header-vk.svg" alt="">
+				</a>
+				<a href="">
+					<img src="images/header-instagramm.svg" alt="">
+				</a>
 			</div>
-		</header>
+		</div>
+	</header>
+
+	<main class="m-top-big">
+		<section class="mp-events container">
+						
+				<h2>В 2023 году</h2>
+				<p>Федерация альпинизма Нижегородской области проводит следующие учебно-тренировочные сборы:</p>
+				<div class="mp-events__list">
+					<div class="event event--long">
+						<img src="images/event-crym.jpg" alt="">
+						<div class="event__text">
+							<h3 class="event__name">Крым, гора Сокол</h3>
+							<p class="event__date">29 декабря - 8 января</p>
+						</div>
+					</div>
+					<div class="event event--long grid-right">
+						<img src="images/event-kyzi.jpg" alt="">
+						<div class="event__text">
+							<h3 class="event__name">Кавказ, Альплагерь Кязи</h3>
+							<p class="event__date">16 апреля - 2 мая</p>
+						</div>
+					</div>
+					<div class="event event--long">
+						<img src="images/event-kavkaz.jpg" alt="">
+						<div class="event__text">
+							<h3 class="event__name">Кавказ</h3>
+							<p class="event__date">16 июля - 8 августа</p>
+						</div>
+					</div>
+				</div>
+			
+			
+		</section>
 
 	</main>	
 </body>
