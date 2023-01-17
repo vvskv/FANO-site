@@ -1,3 +1,6 @@
+:root {
+	--brd-radius: 7px;
+}
 body {
 	margin: 0;
 	padding: 0;
@@ -44,7 +47,8 @@ h3 {
 .mp-header {
 	position: relative;
 	width: 100vw;
-	height: 80vh;
+/*	height: 80vh;*/
+	height: 800px;
 	min-height: 600px;
 	background-image: url(../images/main-page-banner.jpg);
 	background-repeat: no-repeat;
@@ -109,6 +113,11 @@ h3 {
 }
 
 
+.events-and-news {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	column-gap: 50px;
+}
 .mp-events__list {
 	display: grid;
 	row-gap: 50px;
@@ -129,6 +138,7 @@ h3 {
 }
 .event img {
 	width: 100%;
+	border-radius: var(--brd-radius);
 }
 .event__text {
 	position: absolute;
@@ -141,6 +151,7 @@ h3 {
 	width: calc(100% - 20px);
 	z-index: 100;
 	background: rgba(255, 255, 255, 0.8);
+	border-radius: var(--brd-radius);
 }
 .grid-right {
 	justify-self: end;
@@ -177,6 +188,7 @@ h3 {
 	width: 400px;
 	height: 500px;
 	background: rgba(255, 255, 255, 0.9);
+	border-radius: var(--brd-radius);
 }
 .mp-about__item h3 {
 	margin-top: 75px;
