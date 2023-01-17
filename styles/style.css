@@ -1,5 +1,6 @@
 :root {
 	--brd-radius: 7px;
+	--big-gap: 75px;
 }
 body {
 	margin: 0;
@@ -17,6 +18,9 @@ ul {
 }
 h1, h2, h3, h4, p, a, li, ul {
 	margin: 0;
+}
+a {
+	text-decoration: none;
 }
 li, p, a {
 	font-family: 'Raleway';
@@ -41,14 +45,19 @@ h3 {
 .m-top-big {
 	margin-top: 200px;
 }
-
+.fw-600 {
+	font-weight: 600;
+}
+.text-link {
+	text-decoration: underline;
+}
 
 /*Хедер и баннер на главной странице*/
 .mp-header {
 	position: relative;
-	width: 100vw;
-/*	height: 80vh;*/
-	height: 800px;
+	/* width: 100vw; */
+	height: 80vh;
+	/* height: 800px; */
 	min-height: 600px;
 	background-image: url(../images/main-page-banner.jpg);
 	background-repeat: no-repeat;
@@ -57,7 +66,6 @@ h3 {
 .mp-header::after {
 	content: url(../images/climber-1.svg);
 	position: absolute;
-/*	bottom: 0;*/
 	right: 0;
 	z-index: -1;
 }
@@ -116,10 +124,11 @@ h3 {
 .events-and-news {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	column-gap: 50px;
+	column-gap: 100px;
 }
 .mp-events__list {
 	display: grid;
+	/* min-height: 1000px; */
 	row-gap: 50px;
 }
 .event__date {
@@ -135,19 +144,23 @@ h3 {
 .event {
 	position: relative;
 	max-width: 850px;
+	height: 100%;
 }
 .event img {
 	width: 100%;
+	/* height: 100%; */
 	border-radius: var(--brd-radius);
 }
 .event__text {
 	position: absolute;
+	/* bottom: 300%; */
 	bottom: 10px;
 	left: 10px;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	height: 85px;
+	/* height: 85px; */
+	height: 25%;
 	width: calc(100% - 20px);
 	z-index: 100;
 	background: rgba(255, 255, 255, 0.8);
@@ -167,7 +180,7 @@ h3 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 100vw;
+	/* width: 100vw; */
 	height: 80vh;
 	min-height: 600px;
 	background-image: url(../images/main-page-about.jpg);
@@ -176,19 +189,22 @@ h3 {
 }
 
 .mp-about__list {
-	display: flex;
-	gap: 50px;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 50px;
+	height: 80%;
 }
 .mp-about__item {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 400px;
-	height: 500px;
+	min-width: 300px;
+	/* width: 400px; */
+	/* height: 500px; */
 	background: rgba(255, 255, 255, 0.9);
 	border-radius: var(--brd-radius);
+	/* padding: 85px 50px; */
 }
 .mp-about__item h3 {
 	margin-top: 75px;
@@ -198,4 +214,43 @@ h3 {
 	margin-top: 25px;
 	line-height: 200%;
 	text-align: center;
+}
+
+
+.footer-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* width: 100vw; */
+	height: 200px;
+	background-color: #617693;
+}
+.footer-main__content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.footer-main__text {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+.footer-main__text p, a {
+	color: white;
+}
+.footer-main__icons {
+	display: flex;
+	gap: 75px;
+}
+.footer-copyright {
+	/* display: flex; */
+
+	background: #A3B3C9;
+	height: 50px;
+}
+.footer-copyright__content {
+	display: flex;
+	align-items: center;
+	height: 50px;
 }
