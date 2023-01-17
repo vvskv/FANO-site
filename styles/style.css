@@ -1,7 +1,4 @@
-font-family: 'Jost', sans-serif;
-font-family: , sans-serif;
-
-body, html {
+body {
 	margin: 0;
 	padding: 0;
 }
@@ -45,12 +42,20 @@ h3 {
 
 /*Хедер и баннер на главной странице*/
 .mp-header {
+	position: relative;
 	width: 100vw;
 	height: 80vh;
 	min-height: 600px;
 	background-image: url(../images/main-page-banner.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+.mp-header::after {
+	content: url(../images/climber-1.svg);
+	position: absolute;
+/*	bottom: 0;*/
+	right: 0;
+	z-index: -1;
 }
 .mp-header__wrap {
 	height: 100%;
@@ -144,4 +149,41 @@ h3 {
 .mp-events {
 	display: grid;
 	row-gap: 50px;
+}
+
+.mp-about {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 80vh;
+	min-height: 600px;
+	background-image: url(../images/main-page-about.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mp-about__list {
+	display: flex;
+	gap: 50px;
+	justify-content: space-between;
+}
+.mp-about__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 400px;
+	height: 500px;
+	background: rgba(255, 255, 255, 0.9);
+}
+.mp-about__item h3 {
+	margin-top: 75px;
+}
+.mp-about__item p {
+	max-width: 250px;
+	margin-top: 25px;
+	line-height: 200%;
+	text-align: center;
 }
