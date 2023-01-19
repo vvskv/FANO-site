@@ -195,6 +195,8 @@ h3 {
 }
 .event--main::after {
 	position: absolute;
+	top: 10px;
+	right: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
