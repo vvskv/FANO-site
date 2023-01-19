@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" wrap="width=device-width, initial-scale=1.0" />
     <title>Федерация альпинизма Нижегородской области</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,16 +18,16 @@
     ></script>
   </head>
   <body>
+
     <header class="mp-header">
       <div class="mp-header__wrap container">
         <div class="fixed-header">
           <img src="images/logo-big.svg" alt="" />
           <nav>
-            <ul class="menu">
-				
+            <ul class="menu">				
               <li class="menu__opening-point"><a href="">Новичку</a></li>
               <li class="menu__opening-point"><a href="">База данных</a></li>
-              <!-- <li><a href="">Новости</a></li> -->
+              <li><a href="">Новости</a></li>
               <li><a href="">Календарь</a></li>
               <li class="menu__opening-point"><a href="">О федерации</a></li>
               <li><a href="">Контакты</a></li>
@@ -127,7 +127,54 @@
         </div>      
     </section>
 
-     <div id="vk_groups"></div>
+    <section class="mp-study s-m-top-big">
+
+    	<div class="mp-study__title">
+    		<div class="container">
+    			<h2>У нас вы научитесь:</h2>
+    		</div>    		
+    	</div>
+	    	<div class="mp-study__background">
+	    		<div class="container mp-study__list">
+	    		<div class="mp-study__item">
+	    			<img src="images/icon-axe.svg" alt="">
+	    			<p>Надежно и безопасно передвигаться по скалам, горным тропам, осыпям, снегу и льду</p>
+	    		</div>
+	    		<div class="mp-study__item">
+	    			<img src="images/icon-carabine.svg" alt="">
+	    			<p>Работать с альпинистским снаряжением и осуществлять страховку напарника</p>
+	    		</div>
+	    		<div class="mp-study__item">
+	    			<img src="images/icon-tent.svg" alt="">
+	    			<p>Организовывать бивак на простом горном рельефе и готовить пищу в походных условиях</p>
+	    		</div>
+	    		<div class="mp-study__item">
+	    			<img src="images/icon-medical-kit.svg" alt="">
+	    			<p>Оказывать первую  доврачебную помощь при травмах и заболеваниях</p>
+	    		</div>
+	    	</div>
+    	</div>    	
+    </section>
+
+    <section class="mp-news s-m-top-big">
+    	<div class="container">
+    		<h2>Новости</h2>
+    	<div class="mp-news__wrap">
+    		<div class="mp-news__list">
+    			<div class="mp-news__item">
+    				<h3>История нижегородского альпинизма</h3>
+    				<p>Эта статья, написанная в 1983 году к 60-летию советского альпинизма, рассказывает об истории альпинизма в Горьком, самых значимых восхождениях и о людях, стоявших у его истоках. Автор статьи - мастер спорта, председатель областной федерации альпинизма в те годы Евгений Тур.
+С некоторыми корректировками участника М.А. Фаддеева (выделены жирным курсивом)
+В 1933 г. группа молодых автозаводцев под руководством Якова Москалёва совершила восхождение на вершину Эльбрус. К сожалению, каких-либо сведений о дальнейших организованных восхождениях горьковчан мы не имеем, хотя в печати и упоминались отдельные имена довоенных любителей горных путешествий, таких как Лев Надеждин, Владимир Назаров (погибший в Великую Отечественную войну) и других.</p>
+<a href="" class="s-text-link">Читать</a>
+    			</div>
+    			<div class="mp-news__item">
+    				<h3>Разрядные нормы по альпинизму</h3>
+    				<img src="images/alpinism-standarts.jpg" alt="">
+    				<a href="" class="s-text-link">Читать</a>
+    			</div>
+    		</div>
+    		<div id="vk_groups"></div>
           <script type="text/javascript">
             VK.Widgets.Group(
               "vk_groups",
@@ -143,18 +190,25 @@
               25334606
             );
           </script>
+    	</div>
+
+    	</div>
+    	
+    </section>
+
+     
     </main>
 
     <footer class="s-m-top-big">
       <div class="footer-main">
-        <div class="footer-main__content container">
+        <div class="footer-main__wrap container">
           <img src="images/logo-big.svg" alt="" />
           <div class="footer-main__text">
             <p>
               г. Нижний Новгород, ул. Голубева, д. 4а,<br> скалолазный зал школы №91
             </p>
             <a href="" class="fw-600">+7 (987) 537-55-93</a>
-            <a href="" class="">ofso.fano@gmail.com</a>
+            <a href="" class="s-text-link">ofso.fano@gmail.com</a>
           </div>
           <div class="footer-main__icons">
             <a href="">
@@ -167,7 +221,7 @@
         </div>
       </div>
       <div class="footer-copyright">
-        <div class="container footer-copyright__content">
+        <div class="container footer-copyright__wrap">
           <p>© 2023 Федерация альпинизма Нижегородской области</p>
         </div>
       </div>

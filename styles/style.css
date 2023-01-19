@@ -3,6 +3,7 @@
 	--big-gap: 75px;
 	--main-margin: 50px;
 	--main-color: #617693;
+	--h2-margin: 75px;
 }
 body {
 	margin: 0;
@@ -40,6 +41,9 @@ h3 {
 	font-size: 20px;
 	font-weight: 600;
 }
+h2 {
+	margin-bottom: var(--h2-margin);
+}
 .container {
 	max-width: 1400px;
 	margin: auto;
@@ -51,12 +55,12 @@ h3 {
 .fw-600 {
 	font-weight: 600;
 }
-.text-link {
+.s-text-link {
 	text-decoration: underline;
 }
 .s-subtitle {
 	max-width: 50%;
-	margin-top: 75px;
+/*	margin-top: 75px;*/
 }
 
 /*Хедер и баннер на главной странице*/
@@ -202,19 +206,72 @@ h3 {
 	justify-content: center;
 	content: 'Основные сборы';
 	background-color: var(--main-color);
-	background-
 	border-radius: var(--brd-radius);
 	width: 250px;
 	height: 50px;
 	color: white;
 	font-weight: 600;
-	font-size: 20px;
+	font-size: 16px;
 }
 
+/*study*/
+.mp-study__background {
+	background-image: url(../images/main-page-study.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 100px 0;
+}
+.mp-study__title {
+	background: #DFC08C;
+	padding: 10px 0;
+}
+.mp-study__title h2 {
+	margin: 0;
+}
+.mp-study__list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	row-gap: var(--main-margin);
+	column-gap: var(--main-margin);
+}
+.mp-study__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 240px;
+	height: 300px;
+	padding-top: 50px;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: var(--brd-radius);
+}
+.mp-study__item p {
+	width: 80%;
+	text-align: center;
+	margin-top: 25px;
+}
 
-
-
-
+/*news*/
+.mp-news__wrap {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: space-between;
+	margin-top: var(--main-margin);
+}
+.mp-news__list {
+	display: flex;
+	flex-direction: column;
+	gap: 75px;
+	max-width: 600px;
+}
+.mp-news__item {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+.mp-news__item a {
+	align-self: flex-end;
+}
 
 /*footer*/
 .footer-main {
@@ -224,7 +281,7 @@ h3 {
 	height: 200px;
 	background-color: #617693;
 }
-.footer-main__content {
+.footer-main__wrap {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -249,7 +306,7 @@ h3 {
 	background: #A3B3C9;
 	height: 50px;
 }
-.footer-copyright__content {
+.footer-copyright__wrap {
 	display: flex;
 	align-items: center;
 	height: 50px;
