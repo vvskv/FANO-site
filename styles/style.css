@@ -302,6 +302,7 @@ h2 {
 .mp-news__wrap {
 	display: grid;
 	grid-template-columns: auto auto;
+	column-gap: 50px;
 	justify-content: space-between;
 	margin-top: var(--main-margin);
 }
@@ -309,7 +310,7 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	gap: 75px;
-	max-width: 600px;
+/*	max-width: 600px;*/
 }
 .mp-news__item {
 	display: flex;
