@@ -160,7 +160,7 @@
 	class OpenedMenu {
 		constructor(menu) {
 			this.openedMenu = menu;
-			this.subMenu = document.querySelector('.menu__submenu');
+			this.subMenu = menu.querySelector('.menu__submenu');
 			this.init();
 		};
 
