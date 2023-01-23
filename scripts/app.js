@@ -133,31 +133,17 @@
 	class ScrollBox {
 
 		constructor(container) {
-			// this.scrollBox = container.querySelector('.scroll-box');
 			this.scrollBox = container;
-			this.scrollActive = false;
 			this.init();
 		};
-
-		resetColor() {
-			document.documentElement.style.setProperty("--scroller-color", 'white');
-		};
-		checkScrollActive() {
-			const eventArr = ['scroll','click'];
-			for(let event of eventArr) {
-				this.scrollBox.addEventListener(event, ()=> {
-					// console.log('it is work');
-					this.scrollActive = true;
-				})
-			}
-		}
 		
 		init() {
-			this.checkScrollActive();
-			this.scrollBox.addEventListener('scroll', ()=> {
-				document.documentElement.style.setProperty("--scroller-color", '#617693');
-				setTimeout(this.resetColor, 1000);
+			this.scrollBox.addEventListener('mouseover', ()=> {
+				document.documentElement.style.setProperty("--scroller-color", '#a3b3c9');
 			});
+			this.scrollBox.addEventListener('mouseout', ()=> {
+				document.documentElement.style.setProperty("--scroller-color", 'white');
+			})
 		}
 
 	}
@@ -165,5 +151,31 @@
 	const scrollBoxes = document.querySelectorAll('.scroll-box');
 	for (let box of scrollBoxes) {
 		const scrollBox = new ScrollBox(box);
+	}
+})();
+
+;(function() {
+	'use strict'
+
+	class OpenedMenu {
+		constructor(menu) {
+			this.openedMenu = menu;
+			this.subMenu = document.querySelector('.menu__submenu');
+			this.init();
+		};
+
+		init() {
+			this.openedMenu.addEventListener('mouseover', ()=> {
+				this.subMenu.style.display = 'block';
+			});
+			this.openedMenu.addEventListener('mouseout', ()=> {
+				this.subMenu.style.display = 'none';
+			})
+		}
+	}
+
+	const allOpenedMenu = document.querySelectorAll('.menu__opened-menu');
+	for (let menu of allOpenedMenu) {
+		const openedMenu = new OpenedMenu(menu);
 	}
 })();

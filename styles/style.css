@@ -75,7 +75,6 @@ h2 {
 }
 .s-subtitle {
       max-width: 50%;
-      /*	margin-top: 75px;*/
 }
 .scroll-box::-webkit-scrollbar {
       width: 7px; /* ширина для вертикального скролла */
@@ -86,6 +85,7 @@ h2 {
       background-color: var(--scroller-color);
       border-radius: 7em;
 }
+
 
 
 /*-------------------------------*/
@@ -145,20 +145,35 @@ h2 {
       display: flex;
       gap: 50px;
 }
-.menu__opening-point {
+.menu__opened-menu {
       position: relative;
       margin-right: 25px;
 }
-.menu__opening-point::after {
+.menu__opened-menu::after {
       content: url(../images/menu-arrow.svg);
       position: absolute;
       top: 1px;
       right: -23px;
+      cursor: pointer;
 }
 .mp-header__icons {
       display: flex;
       justify-content: flex-end;
       gap: 135px;
+}
+.menu__submenu {
+      position: absolute;
+      top: 40px;
+      width: 280px;
+      background-color: var(--main-color);
+      padding: 15px;
+      border-radius: var(--brd-radius);
+      display: none;
+}
+.submenu__list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
 }
 
 /*about*/
@@ -337,8 +352,6 @@ h2 {
       gap: 75px;
 }
 .footer-copyright {
-      /* display: flex; */
-
       background: #a3b3c9;
       height: 50px;
 }
