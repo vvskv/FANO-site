@@ -25,18 +25,24 @@
                   rel="stylesheet"
             />
             <link rel="stylesheet" href="styles/style.css" />
+            <link rel="stylesheet" href="styles/media.css">
 
             <script
                   type="text/javascript"
                   src="https://vk.com/js/api/openapi.js?168"
             ></script>
       </head>
+
       <body>
             <header class="mp-header">
-                  <div class="mp-header__wrap container">
-                        <div class="fixed-header">
-                              <img src="images/logo-big.svg" alt="" />
+                  <div class="fixed-menu">
+                              <div class="fixed-menu__wrap container">
+                                 <img src="images/logo-big.svg" alt="" />
                               <nav>
+                                    <div class="hamburger-menu">
+                                          <input type="checkbox" id="hamburger-menu__toggle">
+                                          <label for="hamburger-menu__toggle" class="hamburger-menu__btn"><span></span></label>
+                                    </div>
                                     <ul class="menu">
                                           <li class="menu__opened-menu">
                                                 <a href="">Новичку</a>
@@ -77,8 +83,12 @@
                                           </li>
                                           <li><a href="">Контакты</a></li>
                                     </ul>
-                              </nav>
+                              </nav>   
+                              </div>
+                              
                         </div>
+                  <div class="mp-header__wrap container">
+                        
                         <div class="mp-header__title">
                               <span> Официальный сайт ОФСО</span>
                               <strong>

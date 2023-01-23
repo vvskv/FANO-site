@@ -62,7 +62,7 @@ h3 {
       padding: 0 50px;
 }
 .s-m-top-big {
-      margin-top: 200px;
+      margin-top: 250px;
 }
 .fw-600 {
       font-weight: 600;
@@ -90,15 +90,43 @@ h3 {
 /*      width: 100%;*/
       justify-content: space-between;
 }
+#hamburger-menu__toggle {
+      opacity: 0;
+}
+.hamburger-menu {
+      position: relative;
+/*      display: flex;*/
+/*      align-items: center;*/
+      width: 55px;
+      height: 50px;
+      cursor: pointer;
+}
+.hamburger-menu__btn > span,
+.hamburger-menu__btn > span::before,
+.hamburger-menu__btn > span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 7px;
+      border-radius: 5px;
+      background-color: white;
+}
+.hamburger-menu__btn > span::before {
+      content: '';
+      top: -15px;
+
+}
+.hamburger-menu__btn > span::after {
+      content: '';
+      top: 15px;
+}
 
 /*-------------------------------*/
 
 /*Хедер и баннер на главной странице*/
 .mp-header {
       position: relative;
-      /* width: 100vw; */
       height: 80vh;
-      /* height: 800px; */
       min-height: 600px;
       background-image: url(../images/main-page-banner.jpg);
       background-repeat: no-repeat;
@@ -115,7 +143,8 @@ h3 {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding-bottom: 100px;
+      padding-bottom: 50px;
+      padding-top: 225px;
 }
 .mp-header li,
 .mp-header strong,
@@ -136,10 +165,16 @@ h3 {
 }
 .mp-header__title span {
       font-family: "Raleway";
-      font-size: 32px;
-      font-weight: 400;
+      font-size: 26px;
+      font-weight: 600;
 }
-.fixed-header {
+.fixed-menu {
+      position: fixed;
+      background-color: rgba(82, 94, 110, 0.85);
+      width: 100%;
+      z-index: 10000;
+}
+.fixed-menu__wrap {
       display: flex;
       height: 110px;
       justify-content: space-between;
@@ -148,6 +183,7 @@ h3 {
 .menu {
       display: flex;
       gap: 50px;
+      font-weight: 600;
 }
 .menu__opened-menu {
       position: relative;
@@ -174,27 +210,27 @@ h3 {
 .mp-header__icons {
       display: flex;
       justify-content: flex-end;
-      gap: 135px;
+      gap: 85px;
 }
 .menu__submenu {
       position: absolute;
       left: -10px;
       top: 30px;
-/*      width: 280px;*/
-/*      background-color: var(--main-color);*/
-background-color: rgba(97, 118, 147, 0.8);
-      padding: 15px 15px 15px 20px;
+      background-color: rgba(82, 94, 110, 1);
+      padding: 20px 15px 20px 20px;
       border-radius: var(--brd-radius);
       display: none;
+      font-weight: 400;
 }
 .submenu__list {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
 }
 .submenu__list a {
       white-space: nowrap;
 }
+
 
 /*about*/
 
@@ -272,7 +308,8 @@ background-color: rgba(97, 118, 147, 0.8);
       width: 250px;
       height: 50px;
       color: white;
-      font-weight: 600;
+      font-weight: 400;
+      letter-spacing: 0.03em;
       font-size: 16px;
 }
 
