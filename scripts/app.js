@@ -179,3 +179,10 @@
 		const openedMenu = new OpenedMenu(menu);
 	}
 })();
+
+const hamburgerMenu = document.querySelector('.hamburger');
+const menu
+hamburgerMenu.addEventListener('click', ()=> {
+	hamburgerMenu.classList.toggle('hamburger--is-active');
+	console.log(hamburgerMenu.classList);
+})
