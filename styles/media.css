@@ -1,11 +1,12 @@
 @media (max-width:1100px) {
 	.menu {
 		display: none;
+		position: absolute;
 	}
 	.hamburger {
 		display: block;
 	}
-	.hamburger--is-active ~ .menu {
+	.hamburger-menu {
 		display: block;
 	}
 }

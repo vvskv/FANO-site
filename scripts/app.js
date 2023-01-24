@@ -180,20 +180,30 @@
 	}
 })();
 
-const hamburgerMenu = document.querySelector('.hamburger');
+// const hamburgerMenu = document.querySelector('.hamburger');
 // console.log(hamburgerMenu.style.display);
-const menu = document.querySelector('.menu');
-if (menu.style.display === 'block') {
+// const menu = document.querySelector('.menu');
+// const hambCheck = document.querySelector('#hamburger__toggle');
+/*if (menu.style.display === 'block') {
 	console.log('!!!!!!!');
 }
 if (getComputedStyle(hamburgerMenu).display === 'block') {
 	hamburgerMenu.addEventListener('click', ()=> {
+		menu.classList.toggle('hamburger-menu');*/
+		// if (getComputedStyle(menu).display === 'none') {
+		// 	// menu.style.display = 'block';
+		// 	console.log('1');
 
+		// } else if (getComputedStyle(menu).display === 'block') {
+		// 	// menu.style.display = 'none';
+		// 	console.log('2');
+		// }
+		// getComputedStyle(menu).display === 'none'? 'block' : 'none';
 	// hamburgerMenu.style.display = 'none';
-	hamburgerMenu.classList.toggle('hamburger--is-active');
+	// hamburgerMenu.classList.toggle('hamburger--is-active');
 	// menu.classList.toggle('hamburger-menu');
 	// menu.style.display = "block";
-	// console.log(hamburgerMenu.classList);
-})
+// 	// console.log(hamburgerMenu.classList);
+// })
 
-}
+// }
