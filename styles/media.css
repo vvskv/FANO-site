@@ -5,4 +5,7 @@
 	.hamburger {
 		display: block;
 	}
+	.hamburger--is-active ~ .menu {
+		display: block;
+	}
 }

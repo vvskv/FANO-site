@@ -181,8 +181,19 @@
 })();
 
 const hamburgerMenu = document.querySelector('.hamburger');
-const menu
-hamburgerMenu.addEventListener('click', ()=> {
+// console.log(hamburgerMenu.style.display);
+const menu = document.querySelector('.menu');
+if (menu.style.display === 'block') {
+	console.log('!!!!!!!');
+}
+if (getComputedStyle(hamburgerMenu).display === 'block') {
+	hamburgerMenu.addEventListener('click', ()=> {
+
+	// hamburgerMenu.style.display = 'none';
 	hamburgerMenu.classList.toggle('hamburger--is-active');
-	console.log(hamburgerMenu.classList);
+	// menu.classList.toggle('hamburger-menu');
+	// menu.style.display = "block";
+	// console.log(hamburgerMenu.classList);
 })
+
+}
