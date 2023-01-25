@@ -4,16 +4,13 @@
 		position: absolute;
 		top: 110px;
 		right: 50px;
-/*    		top: 10px;*/
-/*    		margin-top: 50px;*/
-/*    		right: 0;*/
     		flex-direction: column;
     		gap: 25px;
-/*    		row-gap: 50px;*/
-/*    		gap: 100px;*/
-		/*    width: 100%;*/
-/*    		justify-content: center;*/
-/*    		align-items: center;*/
+    		background-color: var(--main-color);
+      background-color: rgba(82, 94, 110, 0.85);
+    		
+/*    		background-color: white;*/
+    		padding: 20px;
 	}
 	.hamburger-wrap {
 		display: flex;

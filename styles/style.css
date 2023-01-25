@@ -96,25 +96,27 @@ h3 {
 /*Хедер и баннер на главной странице*/
 .mp-header {
       position: relative;
-      height: 80vh;
-      min-height: 600px;
+      /*height: 80vh;
+      min-height: 600px;*/
+      height: 43rem;
       background-image: url(../images/main-page-banner.jpg);
       background-repeat: no-repeat;
       background-size: cover;
 }
 .mp-header::after {
-      content: url(../images/climber-2.svg);
+      /*content: url(../images/climber-2.svg);
       position: absolute;
       right: 0;
-      z-index: -1;
+      z-index: -1;*/
 }
 .mp-header__wrap {
-      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding-bottom: 50px;
-      padding-top: 225px;
+      justify-content: flex-end;
+      height: 100%;
+      padding-bottom: 3rem;
+      gap: 5rem;
 }
 .mp-header li,
 .mp-header strong,
@@ -126,79 +128,85 @@ h3 {
       display: flex;
       flex-direction: column;
       gap: 50px;
+      gap: 1.5rem;
 }
 .mp-header__title strong {
-      font-weight: 600;
-      font-size: 52px;
+      font-weight: 400;
+      font-size: 3.25rem;
       letter-spacing: 0.03em;
       font-family: "Jost";
+/*      font-weight: 600;*/
 }
 .mp-header__title span {
       font-family: "Raleway";
-      font-size: 26px;
-      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: 0.03em;
+
+/*      font-weight: 600;*/
 }
+.mp-header__icons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 5rem;
+      opacity: 0.8;
+}
+
 .fixed-menu {
       position: fixed;
       background-color: rgba(82, 94, 110, 0.85);
       width: 100%;
-      z-index: 10000;
+      z-index: 90;
 }
 .fixed-menu__wrap {
-/*      position: relative;*/
       display: flex;
-      height: 110px;
+      height: 7rem;
       justify-content: space-between;
       align-items: center;
 }
 .menu {
       display: flex;
       gap: 50px;
+      gap: 3.125em;
       font-weight: 600;
 }
-.menu li {
-/*      width: 100%;*/
-}
 .menu__opened-menu {
-      position: relative;
       margin-right: 25px;
 }
-.menu__opened-menu::before {
-      content: '';
-  position: absolute;
-  display: block;
-  top: -10px;
-  left: -10px;
-  right: -30px;
-  bottom: -10px;
-  background: rgba(255, 0, 0, 0.06);
-  cursor: pointer;
-}
-.menu__opened-menu a {
+.menu li {
       position: relative;
 }
-.menu__opened-menu a::after {
+.menu li::before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: -10px;
+      left: -10px;
+      right: -30px;
+      bottom: -10px;
+  background: rgba(255, 0, 0, 0.06);
+      cursor: pointer;
+}
+.menu__opened-menu > a {
+      position: relative;
+}
+.menu__opened-menu > a::after {
       content: url(../images/menu-arrow.svg);
       position: absolute;
       top: -1px;
       right: -23px;
-/*      cursor: pointer;*/
 }
-.mp-header__icons {
-      display: flex;
-      justify-content: flex-end;
-      gap: 85px;
-      opacity: 0.8;
-}
+
+
 .menu__submenu {
       position: absolute;
-      left: -10px;
+/*      left: -10px;*/
       top: 30px;
       background-color: rgba(82, 94, 110, 1);
       padding: 20px 15px 20px 20px;
-      border-radius: var(--brd-radius);
+/*      border-radius: var(--brd-radius);*/
       display: none;
       font-weight: 400;
+      z-index: 100;
 }
 .submenu__list {
       display: flex;
