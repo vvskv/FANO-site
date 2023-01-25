@@ -145,6 +145,7 @@ h3 {
       z-index: 10000;
 }
 .fixed-menu__wrap {
+/*      position: relative;*/
       display: flex;
       height: 110px;
       justify-content: space-between;
@@ -154,6 +155,9 @@ h3 {
       display: flex;
       gap: 50px;
       font-weight: 600;
+}
+.menu li {
+/*      width: 100%;*/
 }
 .menu__opened-menu {
       position: relative;
@@ -167,15 +171,18 @@ h3 {
   left: -10px;
   right: -30px;
   bottom: -10px;
-/*  background: rgba(255, 0, 0, 0.06);*/
+  background: rgba(255, 0, 0, 0.06);
   cursor: pointer;
 }
-.menu__opened-menu::after {
+.menu__opened-menu a {
+      position: relative;
+}
+.menu__opened-menu a::after {
       content: url(../images/menu-arrow.svg);
       position: absolute;
-      top: 1px;
+      top: -1px;
       right: -23px;
-      cursor: pointer;
+/*      cursor: pointer;*/
 }
 .mp-header__icons {
       display: flex;
@@ -202,78 +209,50 @@ h3 {
       white-space: nowrap;
 }
 
-/*-------hamberger-menu-----------*/
+/*-------hamburger-menu-----------*/
 #hamburger-toggle {
-      opacity: 0;
       display: none;
 }
-.hamburger-btn {
-      position: relative;
-      height: 60px;
-      width: 60px;
-      /*display: none;
-      position: relative;
-      width: 55px;
-      height: 47px;*/
+.hamburger-wrap {
+      display: none;
+      height: 100%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+.hamburger-btn,
+.hamburger-btn::before,
 .hamburger-btn::after {
-      content: '';
-      position: absolute;
-      width: 55px;
-      height: 47px;
-      left: 0;
-      cursor: pointer;
-}
-.hamburger-btn > span,
-.hamburger-btn > span::before,
-.hamburger-btn > span::after {
       display: block;
-      position: absolute;
-      width: 100%;
-      height: 6px;
-      width: 75px;
-      border-radius: 5px;
-      background-color: white;
-      transition-duration: .25s;
+  background-color: #fff;
+  position: absolute;
+  height: 6px;
+  width: 50px;
+  transition-duration: .25s;
+/*  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);*/
+  border-radius: 5px;
 }
-.hamburger-btn > span::before {
+.hamburger-btn::before {
       content: '';
       top: -15px;
 }
-.hamburger-btn > span::after {
+.hamburger-btn::after {
       content: '';
       top: 15px;
 }
-.hamburger-toggle:checked + .menu {
-      /*flex-direction: column;
-      gap: 15px;
-      position: absolute;
-      top: 115px;
-      right: 0;
-      width: 280px;*/
-}
-.hamburger__menu {
-      /*display: block;
-      flex-direction: column;
-      gap: 15px;
-      position: absolute;
-      top: 115px;
-      right: 0;
-      width: 280px;*/
-}
-#hamburger-toggle:checked ~ .hamburger-btn > span {
+#hamburger-toggle:checked + .hamburger-wrap  .hamburger-btn {
   transform: rotate(45deg);
 }
-#hamburger-toggle:checked ~ .hamburger-btn > span::before {
-  top: 0;
+#hamburger-toggle:checked + .hamburger-wrap  .hamburger-btn::before {
+      top: 0;
   transform: rotate(0);
 }
-#hamburger-toggle:checked ~ .hamburger-btn > span::after {
-  top: 0;
+#hamburger-toggle:checked + .hamburger-wrap  .hamburger-btn::after {
+      top: 0;
   transform: rotate(90deg);
-}
-.hamburger--is-active + .menu {
-      display: block;
 }
 
 /*-------------------------------*/
