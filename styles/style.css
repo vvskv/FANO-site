@@ -234,16 +234,10 @@ padding-bottom: 1rem;
       opacity: 1;
       transform: scaleY(1);
 }
-.menu > li:hover {
-      color: var(--main-color);
-      background-color: black;
-}
-.menu > li:hover .menu-submenu {
+.menu > li:hover .menu__submenu {
       display: block;
 }
-.menu__opened-menu > a:hover .menu-submenu {
-      display: block;
-}
+
 
 /*-------hamburger-menu-----------*/
 #hamburger-toggle {

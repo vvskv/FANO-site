@@ -165,16 +165,23 @@
 		};
 
 		init() {
-			this.openedMenu.addEventListener('mouseover', ()=> {
+			this.openedMenu.addEventListener('click', ()=> {
 				this.subMenu.style.display = 'block';
 			});
 			this.openedMenu.addEventListener('mouseout', ()=> {
-				this.subMenu.style.display = 'none';
+				// this.subMenu.style.display = 'none';
 			})
+
+			// this.openedMenu.addEventListener('mouseover', ()=> {
+			// 	this.subMenu.style.display = 'block';
+			// });
+			// this.openedMenu.addEventListener('mouseout', ()=> {
+			// 	this.subMenu.style.display = 'none';
+			// })
 		}
 	}
 
-	// const allOpenedMenu = document.querySelectorAll('.menu__opened-menu');
+	const allOpenedMenu = document.querySelectorAll('.menu__opened-menu');
 	for (let menu of allOpenedMenu) {
 		const openedMenu = new OpenedMenu(menu);
 	}
