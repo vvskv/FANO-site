@@ -154,14 +154,23 @@ h3 {
 .fixed-menu {
       position: fixed;
       background-color: rgba(82, 94, 110, 0.85);
+      background-color: rgba(32, 58, 96, 0.9);
       width: 100%;
       z-index: 90;
 }
 .fixed-menu__wrap {
+      position: relative;
       display: flex;
-      height: 7rem;
+/*      height: 7rem;*/
+/*padding: 1rem 0;*/
+padding-top: 1rem;
+padding-bottom: 1rem;
+
       justify-content: space-between;
       align-items: center;
+}
+.menu-wrap {
+      user-select: none;
 }
 .menu {
       display: flex;
@@ -182,8 +191,8 @@ h3 {
       top: -10px;
       left: -10px;
       right: -30px;
-      bottom: -10px;
-  background: rgba(255, 0, 0, 0.06);
+      bottom: -20px;
+/*      background: rgba(255, 0, 0, 0.06);*/
       cursor: pointer;
 }
 .menu__opened-menu > a {
@@ -199,19 +208,20 @@ h3 {
 
 .menu__submenu {
       position: absolute;
-/*      left: -10px;*/
-      top: 30px;
+      top: 2.5em;
+      background-color: rgba(82, 94, 110, 1);
+      background-color: var(--main-color);
       background-color: rgba(82, 94, 110, 1);
       padding: 20px 15px 20px 20px;
-/*      border-radius: var(--brd-radius);*/
+      padding: 2.5em;
       display: none;
-      font-weight: 400;
+      font-weight: 500;
       z-index: 100;
 }
 .submenu__list {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 2em;
 }
 .submenu__list a {
       white-space: nowrap;
