@@ -165,19 +165,19 @@
 		};
 
 		init() {
-			this.openedMenu.addEventListener('click', ()=> {
-				this.subMenu.style.display = 'block';
-			});
-			this.openedMenu.addEventListener('mouseout', ()=> {
-				// this.subMenu.style.display = 'none';
-			})
-
-			// this.openedMenu.addEventListener('mouseover', ()=> {
+			// this.openedMenu.addEventListener('click', ()=> {
 			// 	this.subMenu.style.display = 'block';
 			// });
 			// this.openedMenu.addEventListener('mouseout', ()=> {
-			// 	this.subMenu.style.display = 'none';
+			// 	// this.subMenu.style.display = 'none';
 			// })
+
+			this.openedMenu.addEventListener('mouseover', ()=> {
+				this.subMenu.style.display = 'block';
+			});
+			this.openedMenu.addEventListener('mouseout', ()=> {
+				this.subMenu.style.display = 'none';
+			})
 		}
 	}
 

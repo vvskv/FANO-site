@@ -4,7 +4,7 @@
       --main-margin: 50px;
       --main-color: #617693;
       --h2-margin: 75px;
-	--scroller-color: white;
+      --scroller-color: white;
 }
 body {
       margin: 0;
@@ -87,11 +87,9 @@ h3 {
 
 .title-and-subtitle {
       display: flex;
-/*      width: 100%;*/
+      /*      width: 100%;*/
       justify-content: space-between;
 }
-
-
 
 /*Хедер и баннер на главной странице*/
 .mp-header {
@@ -135,14 +133,14 @@ h3 {
       font-size: 3.25rem;
       letter-spacing: 0.03em;
       font-family: "Jost";
-/*      font-weight: 600;*/
+      /*      font-weight: 600;*/
 }
 .mp-header__title span {
       font-family: "Raleway";
       font-size: 1.25rem;
       letter-spacing: 0.03em;
 
-/*      font-weight: 600;*/
+      /*      font-weight: 600;*/
 }
 .mp-header__icons {
       display: flex;
@@ -161,10 +159,10 @@ h3 {
 .fixed-menu__wrap {
       position: relative;
       display: flex;
-/*      height: 7rem;*/
-/*padding: 1rem 0;*/
-padding-top: 1rem;
-padding-bottom: 1rem;
+      /*      height: 7rem;*/
+      /*padding: 1rem 0;*/
+      padding-top: 1rem;
+      padding-bottom: 1rem;
 
       justify-content: space-between;
       align-items: center;
@@ -185,7 +183,7 @@ padding-bottom: 1rem;
       position: relative;
 }
 .menu li::before {
-      content: '';
+      content: "";
       position: absolute;
       display: block;
       top: -10px;
@@ -205,7 +203,6 @@ padding-bottom: 1rem;
       right: -23px;
 }
 
-
 .menu__submenu {
       position: absolute;
       top: 2.5em;
@@ -215,8 +212,8 @@ padding-bottom: 1rem;
       padding: 20px 15px 20px 20px;
       padding: 2.5em;
       display: none;
-/*      display: block;*/
-/*      opacity: 0;*/
+      /*      display: block;*/
+      /*      opacity: 0;*/
       font-weight: 500;
       z-index: 100;
 }
@@ -228,16 +225,15 @@ padding-bottom: 1rem;
 .submenu__list a {
       white-space: nowrap;
 }
-.menu__opened-menu:hover  .menu-submenu {
+.menu__opened-menu:hover .menu-submenu {
       display: block;
       display: none;
       opacity: 1;
       transform: scaleY(1);
 }
 .menu > li:hover .menu__submenu {
-      display: block;
+      /* display: block; */
 }
-
 
 /*-------hamburger-menu-----------*/
 #hamburger-toggle {
@@ -246,43 +242,43 @@ padding-bottom: 1rem;
 .hamburger-wrap {
       display: none;
       height: 100%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 }
 .hamburger-btn,
 .hamburger-btn::before,
 .hamburger-btn::after {
       display: block;
-  background-color: #fff;
-  position: absolute;
-  height: 6px;
-  width: 50px;
-  transition-duration: .25s;
-/*  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);*/
-  border-radius: 5px;
+      background-color: #fff;
+      position: absolute;
+      height: 6px;
+      width: 50px;
+      transition-duration: 0.25s;
+      /*  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);*/
+      border-radius: 5px;
 }
 .hamburger-btn::before {
-      content: '';
+      content: "";
       top: -15px;
 }
 .hamburger-btn::after {
-      content: '';
+      content: "";
       top: 15px;
 }
-#hamburger-toggle:checked + .hamburger-wrap  .hamburger-btn {
-  transform: rotate(45deg);
+#hamburger-toggle:checked + .hamburger-wrap .hamburger-btn {
+      transform: rotate(45deg);
 }
-#hamburger-toggle:checked + .hamburger-wrap  .hamburger-btn::before {
+#hamburger-toggle:checked + .hamburger-wrap .hamburger-btn::before {
       top: 0;
-  transform: rotate(0);
+      transform: rotate(0);
 }
-#hamburger-toggle:checked + .hamburger-wrap  .hamburger-btn::after {
+#hamburger-toggle:checked + .hamburger-wrap .hamburger-btn::after {
       top: 0;
-  transform: rotate(90deg);
+      transform: rotate(90deg);
 }
 
 /*-------------------------------*/
