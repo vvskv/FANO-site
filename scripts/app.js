@@ -174,7 +174,7 @@
 		}
 	}
 
-	const allOpenedMenu = document.querySelectorAll('.menu__opened-menu');
+	// const allOpenedMenu = document.querySelectorAll('.menu__opened-menu');
 	for (let menu of allOpenedMenu) {
 		const openedMenu = new OpenedMenu(menu);
 	}
