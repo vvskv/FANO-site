@@ -240,7 +240,6 @@ padding-bottom: 1rem;
 }
 .menu > li:hover .menu-submenu {
       display: block;
-      opacity: 1;
 }
 .menu__opened-menu > a:hover .menu-submenu {
       display: block;
