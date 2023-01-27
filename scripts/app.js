@@ -27,7 +27,6 @@
 
 ;(function() {
 	'use strict'
-
 	class OpenedMenu {
 		
 		constructor(menu) {
@@ -41,30 +40,25 @@
 			this.init();
 		};
 
-		init() {						
-
+		init() {
 			if (getComputedStyle(this.hamburgerCheck).display != 'flex') {
 				// console.log('111');
+				this.subMenu.addEventListener('mouseover', this.show);
+				this.subMenu.addEventListener('mouseout', this.hide);	
 				this.openedMenu.addEventListener('click', (e)=> {e.preventDefault()});
 				this.openedMenu.addEventListener('mouseover', this.show);
 				this.openedMenu.addEventListener('mouseout', this.hide);
 			} else {
-
 				this.openedMenu.addEventListener('click', this.clickToggle);
-
-				// if(document.querySelector('.menu__submenu--show')) {
-				// 	// document.querySelector('body').classList.remove('menu__submenu--show');
-				// 	// this.openedMenu.addEventListener('click', this.clickToggle);
-				// console.log('111');
-
-				// } else {
-				// 	this.openedMenu.addEventListener('click', this.clickToggle);
-				// }
 			}			
 			
 		}
 		clickToggle(e) {
-			e.preventDefault();			 
+			e.preventDefault();
+			const openSubMenuArr = document.querySelectorAll('.submenu__wrap');
+				for (let item of openSubMenuArr) {
+					item.classList.remove('submenu__wrap--show');
+				}			 
 			this.subMenu.classList.toggle('submenu__wrap--show');
 		}
 		show() {

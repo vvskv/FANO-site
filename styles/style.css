@@ -232,6 +232,7 @@ h3 {
 }
 .submenu__list a {
       white-space: nowrap;
+/*      padding: 20px;*/
 }
 .menu__opened-menu:hover ~ .menu-submenu {
 /*      display: block;*/
