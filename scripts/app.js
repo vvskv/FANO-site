@@ -161,23 +161,32 @@
 		constructor(menu) {
 			this.openedMenu = menu;
 			this.subMenu = menu.querySelector('.menu__submenu');
+			this.hamburgerCheck = document.querySelector('.hamburger-wrap');
 			this.init();
 		};
 
 		init() {
-			// this.openedMenu.addEventListener('click', ()=> {
-			// 	this.subMenu.style.display = 'block';
-			// });
-			// this.openedMenu.addEventListener('mouseout', ()=> {
-			// 	// this.subMenu.style.display = 'none';
-			// })
+			this.openedMenu.addEventListener('click', this.clickToggle);
+			this.openedMenu.addEventListener('mouseover', this.show);
+			this.openedMenu.addEventListener('mouseout', this.hide);
+			console.log(getComputedStyle(this.hamburgerCheck).display);
+			
 
-			this.openedMenu.addEventListener('mouseover', ()=> {
-				this.subMenu.style.display = 'block';
-			});
-			this.openedMenu.addEventListener('mouseout', ()=> {
-				this.subMenu.style.display = 'none';
-			})
+			// if (getComputedStyle(this.hamburgerCheck).display === 'flex') 			
+			
+		}
+		clickToggle(e) {
+			e.preventDefault();
+			// this.subMenu.classList.toggle('menu__submenu--show');
+			console.log(getComputedStyle(this.hamburgerCheck).display);
+		}
+		show() {
+			// console.log(getComputedStyle(this.hamburgerCheck).display);
+
+			// this.subMenu.classList.add('menu__submenu--show');
+		}
+		hide() {
+			// this.subMenu.classList.remove('menu__submenu--show');
 		}
 	}
 

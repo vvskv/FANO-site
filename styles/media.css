@@ -1,50 +1,37 @@
-@keyframes showRight {
 
-from {right:-100%;}
-
-to {right:0;}
-
-}
-@keyframes closeRight {
-	from {right: 0;}
-
-	to {right: -100%;}
-}
 @media (max-width:1100px) {
 	.menu-wrap {
-		display: none;
 		position: absolute;
 		width: 50%;
+		width: 100%;
 		top: 100%;
-		right: 0;
-/*		animation: showRight 0.3s;*/
-		animation: closeRight 0.3s;
+		left: -100%;
+		overflow: hidden;
+		-webkit-transition: left .5s;
+      transition: left .5s;
 	}
 	.menu {
     		flex-direction: column;
-    		gap: 25px;
-    		gap: 2em;
+/*    		gap: 25px;*/
+    		gap: 3em;
     		background-color: var(--main-color);
       background-color: rgba(82, 94, 110, 1);
-    		padding: 20px;
+/*    		padding: 20px;*/
     		padding-left: 15%;
+    		padding: 10%;
+    		height: 640px;
 	}
 	.menu__submenu {
 		position: static;
 	}
-	.menu > li:hover .menu__submenu {
-      display: none;
-}
-/*.menu > li:active .menu__submenu {
-      display: block;
-}*/
 	.hamburger-wrap {
 		display: flex;
 	}
+
 	#hamburger-toggle:checked ~ .menu-wrap {
-		display: block;
-		animation: showRight 0.3s;
-/*		animation: closeRight 0.3s;*/
+	left: 0;
+	-webkit-transition: left .5s;
+      transition: left .5s;
 	}
 
 
