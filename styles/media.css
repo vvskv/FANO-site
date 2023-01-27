@@ -12,17 +12,21 @@
 	}
 	.menu {
     		flex-direction: column;
-/*    		gap: 25px;*/
     		gap: 3em;
     		background-color: var(--main-color);
-      background-color: rgba(82, 94, 110, 1);
-/*    		padding: 20px;*/
+      	background-color: rgba(82, 94, 110, 1);
     		padding-left: 15%;
     		padding: 10%;
-    		height: 640px;
+
+height: 100vh;
+overflow: scroll;
 	}
-	.menu__submenu {
+	.submenu__wrap {
 		position: static;
+	}
+	.submenu__list {
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 	.hamburger-wrap {
 		display: flex;
