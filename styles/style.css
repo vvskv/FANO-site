@@ -97,10 +97,16 @@ h3 {
 /*Хедер и баннер на главной странице*/
 .mp-header {
       position: relative;
-      height: 43rem;
+      /* height: 43rem; */
+      /* height: 76%; */
+      max-height: 600px;
+      height: 80vw;
+      min-height: 225px;
       background-image: url(../images/main-page-banner.jpg);
       background-repeat: no-repeat;
+      /* background-position: top; */
       background-size: cover;
+      /* background-size: contain; */
 }
 .mp-header::after {
       /*content: url(../images/climber-2.svg);
@@ -115,7 +121,11 @@ h3 {
       justify-content: flex-end;
       height: 100%;
       padding-bottom: 3rem;
-      gap: 5rem;
+      padding-bottom: calc(10px + 40 * (100vw - 320px) / 1080);
+      gap: calc(40px + 30 * (100vw - 320px) / 1080);
+
+      /* gap: 5rem; */
+      /* gap: 15%; */
 }
 .mp-header li,
 .mp-header strong,
@@ -131,14 +141,16 @@ h3 {
 }
 .mp-header__title strong {
       font-weight: 400;
-      font-size: 3.25rem;
+      /* font-size: 3.25rem; */
+      font-size: calc(1.5rem + 28 * (100vw - 320px) / 1080);
       letter-spacing: 0.03em;
       font-family: "Jost";
       /*      font-weight: 600;*/
 }
 .mp-header__title span {
       font-family: "Raleway";
-      font-size: 1.25rem;
+      /* font-size: 1.25rem; */
+      font-size: calc(0.875rem + 6 * (100vw - 320px) / 1080);
       letter-spacing: 0.03em;
 
       /*      font-weight: 600;*/
@@ -154,7 +166,7 @@ h3 {
       position: fixed;
       background-color: rgba(82, 94, 110, 0.85);
       background-color: rgba(32, 58, 96, 0.9);
-      background-color: var(--main-color);
+      background-color: rgba(97, 118, 147, 1);
       border-bottom: 1px solid rgb(255, 255, 255, 0.3);
       width: 100%;
       z-index: 90;
@@ -162,11 +174,15 @@ h3 {
 .fixed-menu__wrap {
       position: relative;
       display: flex;
-      height: 110px;
-      /*padding-top: 1rem;
-      padding-bottom: 1rem;*/
-
+      /* height: 110px; */
+      padding-top: 10px;
+      padding-bottom: 10px;
       justify-content: space-between;
+      align-items: center;
+}
+.fixed-menu__logo {
+      display: flex;
+      justify-content: center;
       align-items: center;
 }
 .menu-wrap {
@@ -253,7 +269,7 @@ h3 {
       display: block;
       background-color: #fff;
       position: absolute;
-      height: 6px;
+      height: 5px;
       width: 50px;
       transition-duration: 0.25s;
       /*  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);*/
