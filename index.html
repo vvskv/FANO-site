@@ -453,14 +453,18 @@
 
                                     <div id="vk_groups"></div>
                                     <script type="text/javascript">
-                                          let vkWidth = 375;
+                                          // window.onresize = ()=> {
+                                          //       let screenWidth = window.screen.width;
+                                          //       let vkWidth = screenWidth/3;
+                                          // }
+                                          
                                           VK.Widgets.Group(
                                                 "vk_groups",
                                                 
                                                 {
                                                       mode: 4,
                                                       wide: 1,
-                                                      width: vkWidth,
+                                                      width: 400,
                                                       height: 800,
                                                       color1: "FFFFFF",
                                                       color2: "000000",

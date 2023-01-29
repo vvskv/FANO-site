@@ -54,8 +54,11 @@
       .mp-study__list {
             grid-template-columns: repeat(2, 1fr); 
       }
-      #vk_groups {
-            width: 100%;
+      .mp-news__wrap {
+            grid-template-columns: auto;
+            justify-items: center;
+            justify-content: center;
+            row-gap: 50px;
       }
 }
 
