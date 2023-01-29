@@ -80,7 +80,8 @@ h3 {
       text-decoration: underline;
 }
 .s-subtitle {
-      max-width: 50%;
+      /* max-width: 50%; */
+      max-width: calc(50% - var(--main-margin)/2);
       /* width: 600px; */
       /* max-width: 600px; */
       /* font-size: 18px; */
