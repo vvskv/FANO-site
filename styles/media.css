@@ -47,7 +47,10 @@
             -webkit-transition: left 0.5s;
             transition: left 0.5s;
       }
-      
+      .mp-events__list {
+            grid-template-columns: repeat(1, 1fr);
+            justify-items: center;
+        }
 }
 
 @media (max-width: 770px) {
@@ -73,6 +76,29 @@
      
 }
 @media (max-width: 480px) {
+      
+      
+}
+@media (max-width: 430px) {
+      .event__text {
+            grid-template-columns: auto;
+            grid-template-rows: repeat(2, 1fr);
+            /* justify-items: left; */
+            /* padding-left: 2em; */
+            padding: 0.7em 1em;
+            row-gap: 0.5em;
+            bottom: 5px;
+            left: 5px;
+            width: calc(100% - 10px);
+      }
+      .event__date {
+            /* justify-self: right; */
+            /* justify-items: ; */
+      }
+      .event--main::after {
+            top: 5px;
+            right: 5px;
+      }
       
 }
 
