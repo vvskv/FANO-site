@@ -70,6 +70,7 @@ h3 {
       padding: 0 50px;
       padding-right: calc(10px + 40*(100vw - 320px) / 1080);
       padding-left: calc(10px + 40*(100vw - 320px) / 1080);
+      /* height: 100%; */
 
 }
 .s-m-top-big {
@@ -133,10 +134,10 @@ h3 {
       /* background-size: contain; */
 }
 .mp-header::after {
-      /*content: url(../images/climber-2.svg);
+      /* content: url(../images/climber-2.svg);
       position: absolute;
       right: 0;
-      z-index: -1;*/
+      z-index: -1; */
 }
 .mp-header__wrap {
       display: flex;
@@ -481,6 +482,7 @@ h3 {
       background: rgba(255, 255, 255, 0.9);
       border-radius: var(--brd-radius);
 }
+
 .mp-study__item p {
       width: 80%;
       text-align: center;
@@ -496,6 +498,7 @@ h3 {
       column-gap: var(--main-margin);
       justify-content: space-between;
       margin-top: var(--main-margin);
+      height: 100%;
 }
 .mp-news__list {
       /*display: flex;
@@ -531,6 +534,9 @@ h3 {
 .mp-news__item img {
 /*      	height: 100%;*/
       width: 100%;
+}
+.mp-news__vk img {
+      display: none;
 }
 
 /*----------footer------------*/
