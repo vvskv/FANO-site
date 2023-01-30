@@ -61,6 +61,9 @@ h3 {
       font-size: calc(17px + 3 * (100vw - 320px) / 1080);
       font-weight: 600;
 }
+/*a > img {
+      float: right;
+}*/
 .container {
       max-width: 1400px;
       margin: auto;
@@ -78,6 +81,15 @@ h3 {
 }
 .s-text-link {
       text-decoration: underline;
+}
+.icon-link img {
+      float: right;
+}
+.icon-link {
+      transition: 0.3s;
+}
+.icon-link:hover {
+      transform: scale(1.1);
 }
 .s-subtitle {
       /* max-width: 50%; */
@@ -180,18 +192,15 @@ h3 {
 .mp-header__icons img {
       width: calc(35px + 40 * (100vw - 320px) / 1080);
 }
-.mp-header__icons a {
-      transition: 0.3s;
-}
-.mp-header__icons a:hover {
-      transform: scale(1.1);
-}
+
+
 
 .fixed-menu {
       position: fixed;
       /* background-color: rgba(82, 94, 110, 0.85);
       background-color: rgba(32, 58, 96, 0.9); */
       background-color: rgba(97, 118, 147, 1);
+/*            background-color: rgba(97, 118, 147, 0.9);*/
 /*      border-bottom: 1px solid rgb(255, 255, 255, 0.3);*/
       width: 100%;
       z-index: 90;
@@ -261,6 +270,8 @@ h3 {
       background-color: rgba(82, 94, 110, 1);
       background-color: var(--main-color);
       background-color: rgba(82, 94, 110, 1);
+/*            background-color: rgba(97, 118, 147, 0.9);*/
+
       font-weight: 500;
       z-index: 100;
       max-height: 0;
@@ -532,16 +543,15 @@ h3 {
 }
 .footer-main__wrap {
       display: flex;
-/*      justify-content: space-between;*/
-gap: calc(var(--main-margin)*2);
+      gap: calc(var(--main-margin)*2);
       align-items: center;
       width: 100%;
+      margin-left: var(--main-margin);
 }
 .footer-main__content {
       display: flex;
       align-items: center;
       width: 100%;
-/*      max-width: 800px;*/
       justify-content: space-between;
 }
 .footer-main__text {
@@ -557,13 +567,14 @@ gap: calc(var(--main-margin)*2);
       display: flex;
       align-items: center;
       height: 100%;
-      gap: 75px;
+/*      gap: 75px;*/
+gap: calc(40px + 35 * (100vw - 320px) / 1080);
 }
 .footer-main__icons img {
-      width: calc(35px + 40 * (100vw - 680px) / 720);
+      height: calc(35px + 20 * (100vw - 680px) / 720);
 }
 .footer-main__logo {
-      width: 100px;
+      width: calc(100px + 50 * (100vw - 320px) / 1080);
 }
 .footer-copyright {
       background: #a3b3c9;
@@ -572,5 +583,8 @@ gap: calc(var(--main-margin)*2);
 .footer-copyright__wrap {
       display: flex;
       align-items: center;
-      height: 50px;
+      height: 50px;      
+}
+.footer-copyright__wrap p {
+      font-size: calc(10px + 6 * (100vw - 320px) / 1080);
 }
