@@ -54,18 +54,28 @@
       .mp-study__list {
             grid-template-columns: repeat(2, 1fr); 
       }
-      .mp-news__wrap {
-            grid-template-columns: auto;
-            justify-items: center;
-            justify-content: center;
-            row-gap: 50px;
+      .mp-news__list {
+      	grid-template-columns: auto;
       }
+      
 }
 
 @media (max-width: 770px) {
       .mp-header__title span {
             display: none;
       }
+}
+@media (max-width: 680px) {
+      .mp-news__wrap {
+            grid-template-columns: auto;
+            justify-items: center;
+            justify-content: center;
+            row-gap: 50px;
+      }
+      .footer-main__content {
+	      	flex-direction: column;
+	      	justify-content: flex-end;
+}
 }
 @media (max-width: 650px) {
       .mp-about__list {
