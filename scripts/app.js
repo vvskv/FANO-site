@@ -42,7 +42,7 @@
                   this.openedMenu = menu.querySelector(".submenu__link");
                   this.subMenu = menu.querySelector(".submenu__wrap");
                   this.hamburgerCheck =
-                        document.querySelector(".hamburger-wrap");
+                        document.querySelector(".hamburger-wrap");               
                   this.clickToggle = this.clickToggle.bind(this);
                   this.show = this.show.bind(this);
                   this.hide = this.hide.bind(this);
@@ -50,7 +50,7 @@
             }
 
             init() {
-                  if (getComputedStyle(this.hamburgerCheck).display != "flex") {
+            	if (getComputedStyle(this.hamburgerCheck).display != "flex") {
                         // console.log('111');
                         this.subMenu.addEventListener("mouseover", this.show);
                         this.subMenu.addEventListener("mouseout", this.hide);
@@ -68,6 +68,24 @@
                               this.clickToggle
                         );
                   }
+                  // if (getComputedStyle(this.hamburgerCheck).display != "flex") {
+                  //       // console.log('111');
+                  //       this.subMenu.addEventListener("mouseover", this.show);
+                  //       this.subMenu.addEventListener("mouseout", this.hide);
+                  //       this.openedMenu.addEventListener("click", (e) => {
+                  //             e.preventDefault();
+                  //       });
+                  //       this.openedMenu.addEventListener(
+                  //             "mouseover",
+                  //             this.show
+                  //       );
+                  //       this.openedMenu.addEventListener("mouseout", this.hide);
+                  // } else {
+                  //       this.openedMenu.addEventListener(
+                  //             "click",
+                  //             this.clickToggle
+                  //       );
+                  // }
             }
             clickToggle(e) {
                   e.preventDefault();
@@ -105,7 +123,24 @@
       "use strict";
 	const hamburger = document.querySelector('#hamburger-toggle');
 	const allSubMenu = document.querySelectorAll('.submenu__wrap');
+	
 	hamburger.addEventListener('change', ()=> {
+		// const scrollY = document.body.style.top;
+		if (hamburger.checked) {
+
+			// document.body.style.position = 'fixed';
+			// document.body.style.top = `${window.scrollY}px`;
+			
+		// document.body.style.overflow = 'hidden';
+		} else {
+		
+
+			// document.body.style.position = '';
+			// document.body.style.top = '';
+			// window.scrollTo(0, parseInt(scrollY || '0') * -1);
+		// document.body.style.overflow = '';
+
+		}
 		if (!hamburger.checked) {
 			for (let item of allSubMenu) {
 				item.classList.remove('submenu__wrap--show');
