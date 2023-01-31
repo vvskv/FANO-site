@@ -118,6 +118,7 @@ h3 {
       justify-content: space-between;
 }
 
+
 /*Хедер и баннер на главной странице*/
 .mp-header {
       position: relative;
@@ -170,8 +171,11 @@ h3 {
 .mp-header__title strong {
       font-weight: 400;
       /* font-size: 3.25rem; */
-      font-size: calc(22px + 30 * (100vw - 320px) / 1080);
-      letter-spacing: 0.03em;
+/*      font-size: calc(22px + 30 * (100vw - 320px) / 1080);*/
+/*      font-size: 52px;*/
+      font-size: 3.25rem;
+/*      font-size: 100%;*/
+      letter-spacing: 0.02em;
       font-family: "Jost";
       /*      font-weight: 600;*/
 }
@@ -531,15 +535,15 @@ h3 {
       column-gap: var(--main-margin);
       justify-content: space-between;
       margin-top: var(--main-margin);
-      margin-top: calc(var(--main-margin)*1.5);      
+/*      margin-top: calc(var(--main-margin)*1.5);      */
       height: 100%;
 }
 .mp-news__list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: var(--main-margin);
-/*      row-gap: var(--main-margin);*/
-      row-gap: calc(var(--main-margin)*1.5);
+      row-gap: var(--main-margin);
+/*      row-gap: calc(var(--main-margin)*1.5);*/
       height: 600px;
       overflow-y: scroll;
       padding-right: 20px;
@@ -547,7 +551,7 @@ h3 {
 .mp-news__item {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 10px;
       /*max-height: 400px;
       overflow-y: hidden;*/
 }
@@ -598,12 +602,14 @@ h3 {
 .footer-main__text a {
       color: white;
 }
+.footer-main__text p {
+      font-size: calc(14px + 2*(100vw - 320px) / 1080);
+}
 .footer-main__icons {
       display: flex;
       align-items: center;
       height: 100%;
-/*      gap: 75px;*/
-gap: calc(40px + 35 * (100vw - 320px) / 1080);
+      gap: calc(40px + 35 * (100vw - 320px) / 1080);
 }
 .footer-main__icons img {
       height: calc(35px + 20 * (100vw - 680px) / 720);
