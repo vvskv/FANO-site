@@ -14,6 +14,12 @@
                               "#a3b3c9"
                         );
                   });
+                  this.scrollBox.addEventListener('scroll', () => {
+                  	document.documentElement.style.setProperty(
+                              "--scroller-color",
+                              "#a3b3c9"
+                        );
+                  })
                   this.scrollBox.addEventListener("mouseout", () => {
                         document.documentElement.style.setProperty(
                               "--scroller-color",
