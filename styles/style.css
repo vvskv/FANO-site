@@ -496,6 +496,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 /*news*/
+.mp-news__title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
 .mp-news__wrap {
       display: grid;
       grid-template-columns: auto auto;
