@@ -42,8 +42,7 @@
                   this.openedMenu = menu.querySelector(".submenu__link");
                   this.subMenu = menu.querySelector(".submenu__wrap");
                   this.hamburgerCheck =
-                        document.querySelector(".hamburger-wrap");
-                  // this.hamburgerToggle = document.querySelector('#hamburger-toggle');               
+                        document.querySelector(".hamburger-wrap");             
                   this.clickToggle = this.clickToggle.bind(this);
                   this.show = this.show.bind(this);
                   this.hide = this.hide.bind(this);
@@ -100,15 +99,24 @@
 (function () {
       "use strict";
 	const hamburger = document.querySelector('#hamburger-toggle');
-	// const menuVisibility = getComputedStyle(document.querySelector('.menu-wrap')).left === 0;
-	const menuVisibility = document.querySelector('.menu-wrap').offsetLeft === 0;
-	// const hamburgerVisibility = getComputedStyle(document.querySelector('.hamburger-wrap')).display;
+	const media1100 = window.matchMedia('(min-width: 1100px)');
 	const allSubMenu = document.querySelectorAll('.submenu__wrap');
 	function disableScroll(e) {
 			e.preventDefault();
     			e.stopPropagation();
     			return false;
 		}
+	function onScroll(e) {
+		if (e.matches) {
+			hamburger.checked = false;
+			document.body.removeEventListener('wheel', disableScroll);
+			for (let item of allSubMenu) {
+				item.classList.remove('submenu__wrap--show');
+			};
+		}
+	}
+	
+	media1100.addListener(onScroll);	
 	hamburger.addEventListener('change', ()=> {
 		if (hamburger.checked) {
 			document.body.addEventListener('wheel', disableScroll, {passive:false});
@@ -125,13 +133,9 @@
 })();
 (function () {
       "use strict";
-	let media1100 = window.matchMedia('(max-width: 1100px)');
-	function onScroll(e) {
-		if (e.matches) {
-			console.log("!!!");
-		}
-	}
-	media1100.addListener(onScroll);
+	const media1100 = window.matchMedia('(min-width: 1100px)');
+	const hamburger = document.querySelector('#hamburger-toggle');
+	
 
 })();
 
