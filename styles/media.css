@@ -107,6 +107,13 @@
       .footer {
             margin-top: 0;
       }
+      .footer-main__icons img {
+/*      height: calc(35px + 20 * (100vw - 680px) / 720);*/
+      height: clamp(35px, 35px + 5 * (100vw - 320px) / 360, 40px);
+			}
+			.footer-main__logo {
+      width: 150px;
+}
 }
 @media (max-width: 650px) {
       .mp-about__list {
@@ -184,6 +191,18 @@
       }
       .footer-main__wrap {
             gap: calc(var(--main-margin));
+      }
+      .footer-main__logo {
+      	display: none;
+      }
+      .footer-main__content {
+      	align-items: flex-start;
+      }
+      .footer-main__text {
+      	text-align: left;
+      }
+      .footer-main__icons {
+      	align-self: flex-end;
       }
 }
 @media (max-width: 375px) {
