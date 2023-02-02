@@ -1,0 +1,14 @@
+body {
+	background-color: var(--text-color);
+}
+li, a, p, h1, h2, h3, h4 {
+	color: white;
+}
+.event__text p,
+.event__text h3 {
+	color: var(--text-color);
+}
+.mp-study h2,
+.mp-study p{
+	color: var(--text-color);
+}
