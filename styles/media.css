@@ -2,35 +2,47 @@
       .mp-about__list {
             grid-template-columns: repeat(2, 1fr);
             justify-items: center;
-            row-gap: calc(25px + 25 * (100vw - 320px) / 980);
+/*            row-gap: calc(25px + 25 * (100vw - 320px) / 980);*/
+            row-gap: clamp(25px, 25px + 25 * (100vw - 320px) / 980, 50px);
       }
 }
 @media (max-width: 1100px) {
       .fixed-menu {
-            background-color: rgba(97, 118, 147, 0.7);
-            background-color: rgba(97, 118, 147, 1);
+/*            background-color: rgba(97, 118, 147, 0.7);*/
+/*            background-color: rgba(97, 118, 147, 1);*/
       }
 
       .menu-wrap {
             position: absolute;
-            width: 50%;
+            background-color: rgba(82, 94, 110, 1);
             width: 100%;
+/*            height: 100vh;*/
+            height: calc(100vh - 100%);
+
             top: 100%;
+/*            top: 0;*/
             left: -100%;
-            overflow: hidden;
+/*            overflow: hidden;*/
             -webkit-transition: left 0.5s;
             transition: left 0.5s;
+            padding: 10%;
+            padding-bottom: 30%;
+            overflow-y: scroll;
+
       }
       .menu {
             flex-direction: column;
             gap: 3em;
-            background-color: var(--main-color);
-            background-color: rgba(82, 94, 110, 1);
-            padding-left: 15%;
-            padding: 10%;
+/*            overflow-x: hidden;*/
 
-            height: 100vh;
-            overflow: scroll;
+
+/*            background-color: var(--main-color);*/
+/*            background-color: rgba(82, 94, 110, 1);*/
+/*            margin: 10px;*/
+            /*padding-left: 15%;
+            padding: 10%;*/
+
+/*            overflow: scroll;*/
       }
       .submenu__wrap {
             position: static;
@@ -58,10 +70,6 @@
       .mp-study__background {
     	background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 41.25%, rgba(0, 0, 0, 0) 100%), url(../images/main-page-study-2.jpg);
     	background-size: cover;
-}
-.mp-study__background .lazy {
-   background-image: none;
-   background-color: #F1F1FA;
 }
       .mp-study__list {
             grid-template-columns: repeat(2, 1fr);
@@ -93,7 +101,9 @@
             gap: 10px;
       }
       .mp-news__list {
-            overflow-y: auto;
+            /*overflow-y: auto;
+            overflow: auto;*/
+            overflow: hidden;
             height: 100%;
             padding-right: 0;
       }
@@ -103,17 +113,20 @@
             justify-content: center;
             position: relative;
             width: 100%;
-            height: calc(100% + 100px);
+/*            height: calc(100% + 100px);*/
             height: 700px;
       }
       .mp-news__vk img {
             display: block;
             position: absolute;
             z-index: -10;
-            width: 100vw;
+/*            width: 100vw;*/
+            width: calc(100vw - 10px);
+/*            width: 100%;*/
             height: 100%;
             object-fit: cover;
             overflow-x: hidden;
+            overflow: hidden;
       }
       .footer {
             margin-top: 0;
@@ -167,7 +180,8 @@
             width: 60%;
       }
       .mp-study__item img {
-            width: calc(50px + 10*(100vw - 320px)/240);
+/*            width: calc(50px + 10*(100vw - 320px)/240);*/
+            width: clamp(50px, 50px + 10*(100vw - 320px)/240, 60px);
       }
       .submenu__list a {
       white-space: normal;
@@ -207,10 +221,13 @@
             right: 5px;
       }
       .mp-about__item {
-            gap: calc(15px + 35 * (100vw - 320px) / 110);
+/*            gap: calc(15px + 35 * (100vw - 320px) / 110);*/
+            gap: clamp(15px, 15px + 35 * (100vw - 320px) / 110, 50px);
       }
       .mp-about__item img {
-            width: calc(50px + 30 * (100vw - 320px)/ 110);
+/*            width: calc(50px + 30 * (100vw - 320px)/ 110);*/
+            width: clamp(50px, 50px + 30 * (100vw - 320px)/ 110, 80px);
+
       }
       .footer-main__wrap {
             gap: calc(var(--main-margin));
@@ -232,5 +249,6 @@
 	.mp-about__item {
 		flex-direction: column;
 		text-align: center;
+		padding-top: 60px;
 	}
 }

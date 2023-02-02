@@ -7,6 +7,7 @@
       --scroller-color: white;
       --acсent-color: rgba(223, 192, 140, 1);
       --secondary-color: #a3b3c9;
+      --text-color: #111111;
 }
 body {
       margin: 0;
@@ -36,7 +37,7 @@ p,
 a,
 li {
       margin: 0;
-      color: #111111;
+      color: var(--text-color);
 }
 a {
       text-decoration: none;
@@ -84,6 +85,32 @@ h3 {
 }
 .s-text-link {
       text-decoration: underline;
+}
+.s-point-link {
+      position: relative;
+      font-size: 30px;
+      color: var(--main-color);
+/*      font-weight: 600;*/
+}
+.mp-news__item .s-point-link:hover::after {
+      content: 'Подробнее';
+      position: absolute;
+      display: flex;
+      align-items: center;
+      height: 70%;
+/*      right: 100%;*/
+      right: 0;
+      bottom: 80%;
+/*      z-index: 20;*/
+/*      bottom: 0;*/
+      background-color: var(--secondary-color);/
+      border-radius: var(--brd-radius);
+      color: var(--text-color);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 0 2em;
+/*      width: 100%;*/
 }
 .icon-link img {
       float: right;
@@ -386,6 +413,11 @@ body::-webkit-scrollbar-thumb {
       opacity: 0;
       transition: all 300ms;
       color: white;
+/*background-color: white;*/
+/*      background-color: var(--acсent-color);*/
+/*      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
+/*      box-shadow: 0px 4px 4px #000000;*/
+/*      background-color: var(--main-color);*/
       border: 1px solid white;
       border-radius: var(--brd-radius);
       font-weight: 500;
@@ -465,9 +497,9 @@ body::-webkit-scrollbar-thumb {
       padding: 100px 0;
       padding: calc(var(--main-margin) * 2) 0;
 }
-.mp-study__background .lazy {
-   background-image: none;
-   background-color: #F1F1FA;
+#id-bg-lazy.lazy {
+   background: none;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 41.25%, rgba(0, 0, 0, 0) 100%);
 }
 .mp-study__title {
       background: #dfc08c;
@@ -573,8 +605,6 @@ body::-webkit-scrollbar-thumb {
 .footer-main__text {
       display: flex;
       flex-direction: column;
-/*      gap: 25px;*/
-/*justify-content: space-between;*/
 gap: clamp(10px, 10px + 15*(100vw - 680px)/720 ,25px);
 }
 .footer-main__text p,
