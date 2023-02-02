@@ -40,6 +40,9 @@
             flex-wrap: wrap;
             gap: 3em;
       }
+      .submneu {
+      	margin-right: 0;
+      }
       .hamburger-wrap {
             display: flex;
       }
@@ -52,6 +55,14 @@
             grid-template-columns: repeat(1, 1fr);
             justify-items: center;
       }
+      .mp-study__background {
+    	background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 41.25%, rgba(0, 0, 0, 0) 100%), url(../images/main-page-study-2.jpg);
+    	background-size: cover;
+}
+.mp-study__background .lazy {
+   background-image: none;
+   background-color: #F1F1FA;
+}
       .mp-study__list {
             grid-template-columns: repeat(2, 1fr);
       }
@@ -158,6 +169,18 @@
       .mp-study__item img {
             width: calc(50px + 10*(100vw - 320px)/240);
       }
+      .submenu__list a {
+      white-space: normal;
+}
+.submenu__list {
+	padding: 1em;
+	padding-top: 1.5em;
+	overflow: hidden;
+	gap: 1.5em;
+}
+.menu {
+	gap: 2em;
+}
 }
 @media (max-width: 460px) {
       .footer-main__text > .s-text-link {

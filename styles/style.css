@@ -457,12 +457,17 @@ body::-webkit-scrollbar-thumb {
 
 /*study*/
 .mp-study__background {
-      background-image: url(../images/main-page-study.jpg);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 41.25%, rgba(0, 0, 0, 0) 100%), url(../images/main-page-study.jpg);
+/*      background-image: url(../images/main-page-study.jpg);*/
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       padding: 100px 0;
       padding: calc(var(--main-margin) * 2) 0;
+}
+.mp-study__background .lazy {
+   background-image: none;
+   background-color: #F1F1FA;
 }
 .mp-study__title {
       background: #dfc08c;
