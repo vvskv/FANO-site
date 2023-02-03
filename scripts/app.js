@@ -169,7 +169,20 @@
 	media1100.addListener(resetMenu);
 })();
 
+(function() {
+	"use strict";
+	const menu = document.querySelector('.fixed-menu');
+	let pageYOffset = 0;
+	window.addEventListener('scroll', ()=> {
+		pageYOffset = window.pageYOffset;
+		if(pageYOffset > 1) {
+			menu.classList.add('fixed-menu--no-opacity');
+		} else {
+			menu.classList.remove('fixed-menu--no-opacity');
+		}
+	})
 
+})();
 
 document.addEventListener("DOMContentLoaded", function() {
   var lazyloadImages;    
