@@ -1,7 +1,7 @@
 :root {
       --brd-radius: 3px;
       --big-gap: 75px;
-      --main-margin: clamp(25px, 25px + 25*(100vw - 320px) /1080 ,50px);
+      --main-margin: clamp(25px, 25px + 25 * (100vw - 320px) /1080, 50px);
       --main-color: #617693;
       --h2-margin: 75px;
       --scroller-color: white;
@@ -74,11 +74,11 @@ h3 {
       margin: auto;
       padding-top: 0;
       padding-bottom: 0;
-      padding-right: clamp(10px, 10px + 40 * (100vw - 320px) / 1080,50px);
-      padding-left: clamp(10px, 10px + 40 * (100vw - 320px) / 1080,50px);
+      padding-right: clamp(10px, 10px + 40 * (100vw - 320px) / 1080, 50px);
+      padding-left: clamp(10px, 10px + 40 * (100vw - 320px) / 1080, 50px);
 }
 .s-m-top-big {
-      margin-top: clamp(75px, 75px + 175 * (100vw - 320px) / 1080 ,250px);
+      margin-top: clamp(75px, 75px + 175 * (100vw - 320px) / 1080, 250px);
 }
 .fw-600 {
       font-weight: 600;
@@ -92,32 +92,36 @@ h3 {
       color: var(--main-color);
       transition: all 1s;
 
-/*      font-weight: 600;*/
+      /*      font-weight: 600;*/
 }
 .mp-news__item .s-point-link::after {
-      content: 'Подробнее';
+      content: "Подробнее";
       position: absolute;
       display: flex;
+      /* display: none; */
       align-items: center;
       height: 70%;
       right: 0;
       bottom: 80%;
       bottom: 10%;
       z-index: 20;
-/*      bottom: 0;*/
+      /*      bottom: 0;*/
       background-color: var(--secondary-color);
       border-radius: var(--brd-radius);
-/*      border: 1px solid var(--text-color);*/
+      /*      border: 1px solid var(--text-color);*/
       color: var(--text-color);
       text-align: center;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       padding: 0 3em;
       opacity: 0;
       transition: all 0.7s ease;
+      pointer-events: none;
 }
 .mp-news__item .s-point-link:hover::after {
+      /* display: flex; */
       opacity: 1;
+      pointer-events: all;
 }
 .icon-link img {
       float: right;
@@ -145,7 +149,7 @@ body::-webkit-scrollbar {
       width: 10px; /* ширина для вертикального скролла */
       height: 11px; /* высота для горизонтального скролла */
       background-color: white;
-/*      border: 1px solid var(--secondary-color);*/
+      /*      border: 1px solid var(--secondary-color);*/
 }
 body::-webkit-scrollbar-thumb {
       background-color: var(--secondary-color);
@@ -160,12 +164,12 @@ body::-webkit-scrollbar-thumb {
 /*Хедер и баннер на главной странице*/
 .mp-header {
       position: relative;
-      height: clamp(225px, 225px + 375 *(100vw - 320px)/ 1080, 600px);
+      height: clamp(225px, 225px + 375 * (100vw - 320px)/ 1080, 600px);
       background-image: url(../images/main-page-banner.jpg);
       background-repeat: no-repeat;
       background-size: cover;
-/*      background-size: contain;*/
-/*background-size: cover contain;*/
+      /*      background-size: contain;*/
+      /*background-size: cover contain;*/
 }
 .mp-header__wrap {
       display: flex;
@@ -219,15 +223,14 @@ body::-webkit-scrollbar-thumb {
       width: 100%;
       z-index: 90;
       -webkit-transition: background-color 1000ms ease;
-    -ms-transition: background-color 1000ms ease;
-    transition: background-color 1000ms ease;
+      -ms-transition: background-color 1000ms ease;
+      transition: background-color 1000ms ease;
 }
 .fixed-menu--no-opacity {
       background-color: rgba(97, 118, 147, 1);
       -webkit-transition: background-color 1000ms ease;
-    -ms-transition: background-color 1000ms ease;
-    transition: background-color 1000ms ease;
-
+      -ms-transition: background-color 1000ms ease;
+      transition: background-color 1000ms ease;
 }
 .fixed-menu__wrap {
       position: relative;
@@ -250,7 +253,7 @@ body::-webkit-scrollbar-thumb {
 }
 .menu {
       display: flex;
-/*      gap: 50px;*/
+      /*      gap: 50px;*/
       gap: 3.125em;
       font-weight: 500;
 }
@@ -292,7 +295,7 @@ body::-webkit-scrollbar-thumb {
       top: 2.5em;
       background-color: rgba(82, 94, 110, 1);
       /*            background-color: rgba(97, 118, 147, 0.9);*/
-/*      background-color: var(--main-color);*/
+      /*      background-color: var(--main-color);*/
 
       font-weight: 400;
       z-index: 100;
@@ -406,7 +409,7 @@ body::-webkit-scrollbar-thumb {
       /* width: 5px; */
 }
 .event__date img {
-/*      width: calc(11px + 14 * (100vw - 320px) / 1080);*/
+      /*      width: calc(11px + 14 * (100vw - 320px) / 1080);*/
       width: clamp(11px, 11px + 14 * (100vw - 320px) / 1080, 25px);
 }
 .event {
@@ -432,16 +435,16 @@ body::-webkit-scrollbar-thumb {
       opacity: 0;
       transition: all 400ms;
       color: white;
-/*background-color: white;*/
-/*      background-color: var(--acсent-color);*/
-/*      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
-/*      box-shadow: 0px 4px 4px #000000;*/
-/*      background-color: var(--main-color);*/
+      /*background-color: white;*/
+      /*      background-color: var(--acсent-color);*/
+      /*      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
+      /*      box-shadow: 0px 4px 4px #000000;*/
+      /*      background-color: var(--main-color);*/
       border: 1px solid white;
       border-radius: var(--brd-radius);
       font-weight: 500;
       letter-spacing: 0.05em;
-/*      font-size: calc(13px + 3 * (100vw - 320px) / 1080);*/
+      /*      font-size: calc(13px + 3 * (100vw - 320px) / 1080);*/
       font-size: clamp(0.8125rem, 0.7569rem + 0.2778vw, 1rem);
       font-size: 15px;
       margin: auto;
@@ -493,23 +496,28 @@ body::-webkit-scrollbar-thumb {
       color: white;
       font-weight: 400;
       letter-spacing: 0.03em;
-/*      font-size: calc(13px + 3 * (100vw - 320px) / 1080);*/
+      /*      font-size: calc(13px + 3 * (100vw - 320px) / 1080);*/
       font-size: clamp(0.8125rem, 0.7569rem + 0.2778vw, 1rem);
       padding: 0.7em 3.5em;
 }
 .event__name {
-/*      font-size: calc(15px + 5 * (100vw - 320px) / 1080);*/
-      font-size: clamp(0.9375rem, 0.8449rem + 0.4630vw, 1.25rem);
+      /*      font-size: calc(15px + 5 * (100vw - 320px) / 1080);*/
+      font-size: clamp(0.9375rem, 0.8449rem + 0.463vw, 1.25rem);
 }
 .event__date {
-/*      font-size: calc(12px + 4 * (100vw - 320px) / 1080);*/
+      /*      font-size: calc(12px + 4 * (100vw - 320px) / 1080);*/
       font-size: clamp(0.75rem, 0.6759rem + 0.3704vw, 1rem);
 }
 
 /*study*/
 .mp-study__background {
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 41.25%, rgba(0, 0, 0, 0) 100%), url(../images/main-page-study.jpg);
-/*      background-image: url(../images/main-page-study.jpg);*/
+      background: linear-gradient(
+                  0deg,
+                  rgba(0, 0, 0, 0.2) 41.25%,
+                  rgba(0, 0, 0, 0) 100%
+            ),
+            url(../images/main-page-study.jpg);
+      /*      background-image: url(../images/main-page-study.jpg);*/
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -517,8 +525,12 @@ body::-webkit-scrollbar-thumb {
       padding: calc(var(--main-margin) * 2) 0;
 }
 #id-bg-lazy.lazy {
-/*   background: none;*/
-background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 41.25%, rgba(0, 0, 0, 0) 100%);
+      /*   background: none;*/
+      background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.2) 41.25%,
+            rgba(0, 0, 0, 0) 100%
+      );
 }
 .mp-study__title {
       background: #dfc08c;
@@ -558,12 +570,12 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 41.25%, rgba(0, 0, 0, 0) 10
 }
 .mp-news__title a::after {
       content: "";
-      position: absolute; 
+      position: absolute;
       height: 2px;
       width: 100%;
-      background:var(--text-color);
-      opacity: 0.7; 
-/*      top: 0;*/
+      background: var(--text-color);
+      opacity: 0.7;
+      /*      top: 0;*/
       left: 0;
       bottom: -5px;
 }
@@ -605,8 +617,7 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 41.25%, rgba(0, 0, 0, 0) 10
       width: 100%;
 }
 .mp-news__vk {
-/*position: relative;*/
-
+      /*position: relative;*/
 }
 .vk__background {
       background: none;
@@ -625,7 +636,7 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 41.25%, rgba(0, 0, 0, 0) 10
       gap: calc(var(--main-margin) * 2);
       align-items: center;
       width: 100%;
-/*padding-left: calc(var(--main-margin)*2);*/
+      /*padding-left: calc(var(--main-margin)*2);*/
 }
 .footer-main__content {
       display: flex;
@@ -636,29 +647,29 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 41.25%, rgba(0, 0, 0, 0) 10
 .footer-main__text {
       display: flex;
       flex-direction: column;
-gap: clamp(10px, 10px + 15*(100vw - 680px)/720 ,25px);
+      gap: clamp(10px, 10px + 15 * (100vw - 680px)/720, 25px);
 }
 .footer-main__text p,
 .footer-main__text a {
       color: white;
 }
 .footer-main__text p {
-/*      font-size: calc(14px + 2 * (100vw - 320px) / 1080);*/
-      font-size: clamp(0.875rem, 0.8380rem + 0.1852vw, 1rem);
+      /*      font-size: calc(14px + 2 * (100vw - 320px) / 1080);*/
+      font-size: clamp(0.875rem, 0.838rem + 0.1852vw, 1rem);
 }
 .footer-main__icons {
       display: flex;
       align-items: center;
       height: 100%;
-/*      gap: calc(40px + 35 * (100vw - 320px) / 1080);*/
+      /*      gap: calc(40px + 35 * (100vw - 320px) / 1080);*/
       gap: clamp(40px, 40px + 35 * (100vw - 320px) / 1080, 75px);
 }
 .footer-main__icons img {
-/*      height: calc(35px + 20 * (100vw - 680px) / 720);*/
+      /*      height: calc(35px + 20 * (100vw - 680px) / 720);*/
       height: clamp(40px, 40px + 20 * (100vw - 680px) / 720, 60px);
 }
 .footer-main__logo {
-/*      width: calc(100px + 50 * (100vw - 320px) / 1080);*/
+      /*      width: calc(100px + 50 * (100vw - 320px) / 1080);*/
       width: clamp(100px, 100px + 50 * (100vw - 680px) / 720, 150px);
 }
 .footer-copyright {
@@ -671,6 +682,6 @@ gap: clamp(10px, 10px + 15*(100vw - 680px)/720 ,25px);
       height: 50px;
 }
 .footer-copyright__wrap p {
-/*      font-size: calc(10px + 6 * (100vw - 320px) / 1080);*/
+      /*      font-size: calc(10px + 6 * (100vw - 320px) / 1080);*/
       font-size: clamp(0.625rem, 0.5139rem + 0.5556vw, 1rem);
 }
