@@ -283,3 +283,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //     window.addEventListener("orientationChange", lazyload);
 //   }
 // })
+
+// if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+//   console.log('🎉 Тёмный режим поддерживается');
+// }
