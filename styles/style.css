@@ -177,7 +177,8 @@ body::-webkit-scrollbar-thumb {
 .mp-header li,
 .mp-header strong,
 .mp-header span,
-.mp-header a {
+.mp-header a,
+.fixed-menu a {
       color: white;
 }
 .mp-header__title {
@@ -239,6 +240,9 @@ body::-webkit-scrollbar-thumb {
 }
 .fixed-menu__logo img {
       width: clamp(40px, 40px + 40 * (100vw - 320px) / 1080, 80px);
+}
+.sp-header > .fixed-menu {
+      background-color: rgba(97, 118, 147, 1);
 }
 .menu-wrap {
       user-select: none;
