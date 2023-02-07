@@ -1,4 +1,31 @@
-(function () {
+
+
+// window.addEventListener('DOMContentLoaded', ()=> {
+//       const hamburger = document.querySelector('#hamburger-toggle');
+//                   hamburger.checked = false;
+// })
+
+
+window.addEventListener('load', function () {
+      
+
+
+
+//       (function () {
+//       "use strict";
+//       const allMenuLink = document.querySelectorAll('.fixed-menu a');
+//       const hamburger = document.querySelector('#hamburger-toggle');
+
+//       for (let item of allMenuLink) {
+//             item.addEventListener('click', ()=> {
+//                   hamburger.checked = false;
+//             })
+//       }
+// })();
+
+
+
+      (function () {
       "use strict";
 
       class ScrollBox {
@@ -15,7 +42,7 @@
                         );
                   });
                   this.scrollBox.addEventListener('scroll', () => {
-                  	document.documentElement.style.setProperty(
+                        document.documentElement.style.setProperty(
                               "--scroller-color",
                               "#a3b3c9"
                         );
@@ -36,7 +63,7 @@
 })();
 
 
-// document.addEventListener("DOMContentLoaded", function(){
+
 
       
     (function () {
@@ -100,6 +127,8 @@
       }
 })();
 
+// Действия при открытии и закрытии меню
+
 (function () {
       "use strict";
       let isMenuOpen = false;
@@ -137,7 +166,26 @@
 
 
 
-// });
+// Управление прозрачностью меню
+(function() {
+      "use strict";
+      const menu = document.querySelector('.mp-header > .fixed-menu');
+      let pageYOffset = 0;
+      window.addEventListener('scroll', ()=> {
+            pageYOffset = window.pageYOffset;
+            if(pageYOffset > 1) {
+                  menu.classList.add('fixed-menu--no-opacity');
+            } else {
+                  menu.classList.remove('fixed-menu--no-opacity');
+            }
+      })
+
+})();
+
+
+
+
+});
       
 
 
@@ -149,24 +197,11 @@
 
 
 
-// Действия при открытии и закрытии меню
 
 
-// Управление прозрачностью меню
-(function() {
-	"use strict";
-	const menu = document.querySelector('.mp-header > .fixed-menu');
-	let pageYOffset = 0;
-	window.addEventListener('scroll', ()=> {
-		pageYOffset = window.pageYOffset;
-		if(pageYOffset > 1) {
-			menu.classList.add('fixed-menu--no-opacity');
-		} else {
-			menu.classList.remove('fixed-menu--no-opacity');
-		}
-	})
 
-})();
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
   var lazyloadImages;    
