@@ -1,31 +1,24 @@
-
-
 // window.addEventListener('DOMContentLoaded', ()=> {
 //       const hamburger = document.querySelector('#hamburger-toggle');
 //                   hamburger.checked = false;
 // })
+// window.addEventListener('load', ()=> {
+//       console.log("!!!!");
+// })
+// window.addEventListener("load", function () {
+(function () {
+      "use strict";
+      const allMenuLink = document.querySelectorAll(".fixed-menu a");
+      const hamburger = document.querySelector("#hamburger-toggle");
 
+      for (let item of allMenuLink) {
+            item.addEventListener("click", () => {
+                  hamburger.checked = false;
+            });
+      }
+})();
 
-window.addEventListener('load', function () {
-      
-
-
-
-//       (function () {
-//       "use strict";
-//       const allMenuLink = document.querySelectorAll('.fixed-menu a');
-//       const hamburger = document.querySelector('#hamburger-toggle');
-
-//       for (let item of allMenuLink) {
-//             item.addEventListener('click', ()=> {
-//                   hamburger.checked = false;
-//             })
-//       }
-// })();
-
-
-
-      (function () {
+(function () {
       "use strict";
 
       class ScrollBox {
@@ -41,12 +34,12 @@ window.addEventListener('load', function () {
                               "#a3b3c9"
                         );
                   });
-                  this.scrollBox.addEventListener('scroll', () => {
+                  this.scrollBox.addEventListener("scroll", () => {
                         document.documentElement.style.setProperty(
                               "--scroller-color",
                               "#a3b3c9"
                         );
-                  })
+                  });
                   this.scrollBox.addEventListener("mouseout", () => {
                         document.documentElement.style.setProperty(
                               "--scroller-color",
@@ -62,18 +55,14 @@ window.addEventListener('load', function () {
       }
 })();
 
-
-
-
-      
-    (function () {
+(function () {
       "use strict";
       class OpenedMenu {
             constructor(menu) {
                   this.openedMenu = menu.querySelector(".submenu__link");
                   this.subMenu = menu.querySelector(".submenu__wrap");
                   this.hamburgerCheck =
-                        document.querySelector(".hamburger-wrap");             
+                        document.querySelector(".hamburger-wrap");
                   this.clickToggle = this.clickToggle.bind(this);
                   this.show = this.show.bind(this);
                   this.hide = this.hide.bind(this);
@@ -83,31 +72,36 @@ window.addEventListener('load', function () {
             init() {
                   this.subMenu.addEventListener("mouseover", this.show);
                   this.subMenu.addEventListener("mouseout", this.hide);
-                  this.openedMenu.addEventListener("click",this.clickToggle);     
-                  this.openedMenu.addEventListener("mouseout", this.hide);      
-                  this.openedMenu.addEventListener("mouseover",this.show);
+                  this.openedMenu.addEventListener("click", this.clickToggle);
+                  this.openedMenu.addEventListener("mouseout", this.hide);
+                  this.openedMenu.addEventListener("mouseover", this.show);
             }
             clickToggle(e) {
                   e.preventDefault();
 
-                  if (getComputedStyle(this.hamburgerCheck).display === "flex") {
-                        const subMenuShowCheck = this.subMenu.classList.contains(
-                        "submenu__wrap--show"
-                  );
-                  if (!subMenuShowCheck) {
-                        // Проверка на открытые пункты меню и их закрытие
-                        const openSubMenuArr =
-                              document.querySelectorAll(".submenu__wrap");
-                        for (let item of openSubMenuArr) {
-                              item.classList.remove("submenu__wrap--show");
+                  if (
+                        getComputedStyle(this.hamburgerCheck).display === "flex"
+                  ) {
+                        const subMenuShowCheck =
+                              this.subMenu.classList.contains(
+                                    "submenu__wrap--show"
+                              );
+                        if (!subMenuShowCheck) {
+                              // Проверка на открытые пункты меню и их закрытие
+                              const openSubMenuArr =
+                                    document.querySelectorAll(".submenu__wrap");
+                              for (let item of openSubMenuArr) {
+                                    item.classList.remove(
+                                          "submenu__wrap--show"
+                                    );
+                              }
+                              this.subMenu.classList.add("submenu__wrap--show");
+                        } else {
+                              this.subMenu.classList.remove(
+                                    "submenu__wrap--show"
+                              );
                         }
-                        this.subMenu.classList.add("submenu__wrap--show");
-                  } else {
-                        this.subMenu.classList.remove("submenu__wrap--show");
                   }
-                  }
-
-                  
             }
             show() {
                   if (getComputedStyle(this.hamburgerCheck).display != "flex") {
@@ -116,7 +110,7 @@ window.addEventListener('load', function () {
             }
             hide() {
                   if (getComputedStyle(this.hamburgerCheck).display != "flex") {
-                  this.subMenu.classList.remove("submenu__wrap--show");
+                        this.subMenu.classList.remove("submenu__wrap--show");
                   }
             }
       }
@@ -133,123 +127,107 @@ window.addEventListener('load', function () {
       "use strict";
       let isMenuOpen = false;
       let pageYOffset = 0;
-      const hamburger = document.querySelector('#hamburger-toggle');
-      const allSubMenu = document.querySelectorAll('.submenu__wrap');
-      const media1100 = window.matchMedia('(min-width: 1100px)');
+      const hamburger = document.querySelector("#hamburger-toggle");
+      const allSubMenu = document.querySelectorAll(".submenu__wrap");
+      const media1100 = window.matchMedia("(min-width: 1100px)");
 
-
-      hamburger.addEventListener('change', ()=> {
+      hamburger.addEventListener("change", () => {
             isMenuOpen = hamburger.checked;
             pageYOffset = window.pageYOffset;
-            if(hamburger.checked === false) closeAllSubMenu();
-      });   
+            if (hamburger.checked === false) closeAllSubMenu();
+      });
       function resetMenu() {
             hamburger.checked = false;
             isMenuOpen = false;
             closeAllSubMenu();
-      };
+      }
       function closeAllSubMenu() {
             for (let item of allSubMenu) {
-                  item.classList.remove('submenu__wrap--show');
-            };
-      };
+                  item.classList.remove("submenu__wrap--show");
+            }
+      }
       function onScroll() {
-            if(isMenuOpen) {
+            if (isMenuOpen) {
                   window.scrollTo(0, pageYOffset);
-            };
-      };
-      document.addEventListener('scroll', onScroll);  
+            }
+      }
+      document.addEventListener("scroll", onScroll);
       media1100.addListener(resetMenu);
 })();
 
-
-
-
-
 // Управление прозрачностью меню
-(function() {
+(function () {
       "use strict";
-      const menu = document.querySelector('.mp-header > .fixed-menu');
+      const menu = document.querySelector(".mp-header > .fixed-menu");
       let pageYOffset = 0;
-      window.addEventListener('scroll', ()=> {
-            pageYOffset = window.pageYOffset;
-            if(pageYOffset > 1) {
-                  menu.classList.add('fixed-menu--no-opacity');
-            } else {
-                  menu.classList.remove('fixed-menu--no-opacity');
-            }
-      })
-
+      if (menu) {
+            window.addEventListener("scroll", () => {
+                  pageYOffset = window.pageYOffset;
+                  if (pageYOffset > 1) {
+                        menu.classList.add("fixed-menu--no-opacity");
+                  } else {
+                        menu.classList.remove("fixed-menu--no-opacity");
+                  }
+            });
+      }
 })();
+// });
 
+document.addEventListener("DOMContentLoaded", function () {
+      var lazyloadImages;
 
+      if ("IntersectionObserver" in window) {
+            lazyloadImages = document.querySelectorAll(".lazy");
+            var imageObserver = new IntersectionObserver(function (
+                  entries,
+                  observer
+            ) {
+                  entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                              var image = entry.target;
+                              image.src = image.dataset.src;
+                              image.classList.remove("lazy");
+                              imageObserver.unobserve(image);
+                        }
+                  });
+            });
 
+            lazyloadImages.forEach(function (image) {
+                  imageObserver.observe(image);
+            });
+      } else {
+            var lazyloadThrottleTimeout;
+            lazyloadImages = document.querySelectorAll(".lazy");
 
-});
-      
+            function lazyload() {
+                  if (lazyloadThrottleTimeout) {
+                        clearTimeout(lazyloadThrottleTimeout);
+                  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyloadImages;    
-
-  if ("IntersectionObserver" in window) {
-    lazyloadImages = document.querySelectorAll(".lazy");
-    var imageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          var image = entry.target;
-          image.src = image.dataset.src;
-          image.classList.remove("lazy");
-          imageObserver.unobserve(image);
-        }
-      });
-    });
-
-    lazyloadImages.forEach(function(image) {
-      imageObserver.observe(image);
-    });
-  } else {  
-    var lazyloadThrottleTimeout;
-    lazyloadImages = document.querySelectorAll(".lazy");
-    
-    function lazyload () {
-      if(lazyloadThrottleTimeout) {
-        clearTimeout(lazyloadThrottleTimeout);
-      }    
-
-      lazyloadThrottleTimeout = setTimeout(function() {
-        var scrollTop = window.pageYOffset;
-        lazyloadImages.forEach(function(img) {
-            if(img.offsetTop < (window.innerHeight + scrollTop)) {
-              img.src = img.dataset.src;
-              img.classList.remove('lazy');
+                  lazyloadThrottleTimeout = setTimeout(function () {
+                        var scrollTop = window.pageYOffset;
+                        lazyloadImages.forEach(function (img) {
+                              if (
+                                    img.offsetTop <
+                                    window.innerHeight + scrollTop
+                              ) {
+                                    img.src = img.dataset.src;
+                                    img.classList.remove("lazy");
+                              }
+                        });
+                        if (lazyloadImages.length == 0) {
+                              document.removeEventListener("scroll", lazyload);
+                              window.removeEventListener("resize", lazyload);
+                              window.removeEventListener(
+                                    "orientationChange",
+                                    lazyload
+                              );
+                        }
+                  }, 20);
             }
-        });
-        if(lazyloadImages.length == 0) { 
-          document.removeEventListener("scroll", lazyload);
-          window.removeEventListener("resize", lazyload);
-          window.removeEventListener("orientationChange", lazyload);
-        }
-      }, 20);
-    }
 
-    document.addEventListener("scroll", lazyload);
-    window.addEventListener("resize", lazyload);
-    window.addEventListener("orientationChange", lazyload);
-  }
-})
-
+            document.addEventListener("scroll", lazyload);
+            window.addEventListener("resize", lazyload);
+            window.addEventListener("orientationChange", lazyload);
+      }
+});
