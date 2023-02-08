@@ -76,6 +76,9 @@ h3 {
 .s-m-top-big {
       margin-top: clamp(75px, 75px + 175 * (100vw - 320px) / 1080, 250px);
 }
+.s-m-top-medium {
+      margin-top: clamp(75px, 75px + 75 * (100vw - 320px) / 1080, 150px);
+}
 .fw-600 {
       font-weight: 600;
 }
@@ -677,26 +680,41 @@ body::-webkit-scrollbar-thumb {
 
 .sp-header {
       position: relative;
-      height: 100px;
+      height: clamp(60px, 60px + 40* (100vw - 320px) / 1080, 100px);
       /* height: 100%; */
 }
-.what-is-it-content {
+.sp-content {
       display: flex;
       flex-direction: column;
-      gap: 150px;
+      gap: clamp(50px, 50px + 50*(100vw - 320px)/1080, 100px)
 }
-.what-is-it-content h1 {
-      position: absolute;
-      max-width: 30%;
-}
-.what-is-it-content p {
+.sp-content p {
       max-width: 600px;
-      margin-left: 488px;
+      margin-right: clamp(0px, 0px + 212 * (100vw - 1100px) /300, 212px);
 }
-.what-is-it-content__img1 {
+.sp-content__p {
       display: flex;
+      justify-content: flex-end;
+      width: 100%;
+}
+.sp-content__h1 {
+      display: flex;
+      justify-content: space-between;
       gap: 50px;
 }
-.grid-content img {
-      width: 100%;
+.sp-content__h1 h1 {
+      max-width: 7.5em;
+}
+.sp-content__two-img {
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: clamp(10px, 10px + 40*(100vw - 320px)/1080, 50px);
+      /* row-gap: 50px; */
+}
+.sp-content__two-img img {
+      height: 100%;
+}
+.sp-content img {
+      max-width: 100%;
+      object-fit: cover;
 }
