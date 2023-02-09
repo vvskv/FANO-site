@@ -60,12 +60,12 @@
       }
 }
 @media (max-width: 980px) {
-      .sp-content__h1 {
+      .sp-content__title-and-content {
             flex-wrap: wrap;
             /* flex-wrap: wrap; */
             /* gap: 50px; */
       }
-      .sp-content__h1 h1 {
+      .sp-content__title-and-content h1 {
             max-width: none;
       }
 }
