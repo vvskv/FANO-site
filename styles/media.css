@@ -263,4 +263,7 @@
       .footer-copyright {
             background: none;
       }
+      .event__date img {
+            filter: invert(100%) sepia(93%) saturate(29%) hue-rotate(112deg) brightness(106%) contrast(107%);
+      }
 }
