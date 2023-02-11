@@ -1,11 +1,4 @@
-// window.addEventListener('DOMContentLoaded', ()=> {
-//       const hamburger = document.querySelector('#hamburger-toggle');
-//                   hamburger.checked = false;
-// })
-// window.addEventListener('load', ()=> {
-//       console.log("!!!!");
-// })
-// window.addEventListener("load", function () {
+
 (function () {
       "use strict";
       const allMenuLink = document.querySelectorAll(".fixed-menu a");

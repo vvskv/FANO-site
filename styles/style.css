@@ -776,3 +776,35 @@ body::-webkit-scrollbar-thumb {
       max-width: 100%;
       object-fit: cover;
 }
+
+.sp-table__item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+}
+.table-warehouse {
+      display: none;
+}
+
+.sp-table {
+      /* display: flex;
+      gap: 50px; */
+      display: grid;
+      grid-template-columns: repeat(3, calc((100% - 100px) / 3));
+      column-gap: 50px;
+      width: 100%;
+      justify-content: space-between;
+      /* width: 1300px; */
+}
+.sp-table__title {
+      height: 300px;
+}
+.sp-table__column {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+      /* width: 300px; */
+}
+.db-reports__title {
+      max-width: 200px;
+}
