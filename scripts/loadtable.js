@@ -16,13 +16,20 @@
       };
 
       media1100.addEventListener("change", () => {
-            console.log("!!!");
+            // console.log("!!!");
             if (window.innerWidth > 1100) {
                   fillingColumn(3);
             } else if (window.innerWidth < 1100) {
                   fillingColumn(2);
             }
       });
+      // media1100.addListener(()=> {
+      //       if (window.innerWidth > 1100) {
+      //             fillingColumn(3);
+      //       } else if (window.innerWidth < 1100) {
+      //             fillingColumn(2);
+      //       }
+      // });
 
       media650.addEventListener("change", () => {
             if (window.innerWidth > 650) {

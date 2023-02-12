@@ -191,7 +191,7 @@ body::-webkit-scrollbar-thumb {
 .mp-header__title strong {
       font-weight: 400;
       font-size: clamp(1.375rem, 0.8194rem + 2.7778vw, 3.25rem);
-      letter-spacing: 0.02em;c
+      letter-spacing: 0.02em;
       font-family: "Jost";
 }
 .mp-header__title span {
@@ -832,4 +832,13 @@ body::-webkit-scrollbar-thumb {
 .sp-table__item .s-point-link:hover::after {
       opacity: 1;
       pointer-events: all;
+}
+.sp-present {
+      display: flex;
+      gap: var(--main-margin);
+      flex-direction: column;
+}
+.sp-present__present-wrap {
+      width: 100%;
+      height: clamp(300px, 300px + 300 * (100vw - 320px) /1080, 600px);
 }

@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             document.addEventListener("scroll", lazyload);
-            window.addEventListener("resize", lazyload);
+            // window.addEventListener("resize", lazyload);
             window.addEventListener("orientationChange", lazyload);
       }
 });
