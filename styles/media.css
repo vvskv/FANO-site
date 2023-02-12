@@ -58,9 +58,9 @@
       .mp-news__list {
             grid-template-columns: auto;
       }
-      /* .sp-table {
-            grid-template-columns: repeat(2, calc((100% - 50px) / 2));
-      } */
+      .sp-table__title {
+            height: 150px;
+      }
 }
 @media (max-width: 980px) {
       .sp-content__title-and-content {
@@ -148,6 +148,15 @@
       }
       .s-subtitle {
             max-width: 600px;
+      }
+      .db-reports__title {
+            max-width: 400px;
+      }
+      .sp-table__title {
+            height: 100%;
+      }
+      .sp-table__column {
+            gap: clamp(40px, 40px + 35 * (100vw - 320px) / 330  , 75px);
       }
 }
 @media (max-width: 560px) {
