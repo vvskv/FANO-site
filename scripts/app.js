@@ -164,7 +164,7 @@
             });
       }
 })();
-// });
+
 
 document.addEventListener("DOMContentLoaded", function () {
       var lazyloadImages;
@@ -224,3 +224,40 @@ document.addEventListener("DOMContentLoaded", function () {
             window.addEventListener("orientationChange", lazyload);
       }
 });
+
+(function () {
+      "use strict";
+      class Tab {
+            constructor(input) {
+                  this.radioInput = input;
+                  this.radioInputValue = input.value;
+                  this.tabContentId = "#content-" + this.radioInputValue;
+                  // console.log(this.tabContentId);
+                  this.tabContent = document.querySelector(this.tabContentId);
+                  // console.log(this.tabContent);
+
+                  this.init();
+            }
+            init() {
+                  this.radioInput.addEventListener("change", ()=> {
+                              // this.tabContent.style.display = "none";
+
+                        if (this.radioInput.checked) {
+                              // console.log(this.tabContent);
+                              console.log("!!!!");
+                              // this.tabContent.style.display = "flex";
+                        } else if (!this.radioInput.checked) {
+                              console.log("-----");
+
+                              // this.tabContent.style.display = "none";
+
+                        }
+                  })
+            }
+      }
+      const allInput = document.querySelectorAll(".sp-tabs__label-list input");
+
+      for (let item of allInput) {
+            const newTab = new Tab(item);
+      }
+})();

@@ -856,10 +856,19 @@ body::-webkit-scrollbar-thumb {
       height: clamp(300px, 300px + 300 * (100vw - 320px) /1080, 600px);
 }
 
+
+.sp-tabs {
+      display: flex;
+      gap: var(--main-margin);
+}
+.sp-tabs__content-box {
+      max-width: 850px;
+}
 .sp-tabs__label-list {
       display: flex;
       flex-direction: column;
       gap: var(--main-margin);
+      max-width: 400px;
 }
 .sp-tabs__label-list p {
       width: fit-content;
@@ -869,6 +878,10 @@ body::-webkit-scrollbar-thumb {
 .sp-tabs__label-list input:checked + label > p {
       border-bottom: 1px solid var(--text-color);
 }
-.sp-tabs__content-box {
-      
+.sp-tabs__item {
+      display: none;
+      flex-direction: column;      
+}
+.sp-tabs__label-list>#tab-normatives:checked ~ #content-normatives {
+      display: flex;
 }
