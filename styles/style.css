@@ -85,6 +85,19 @@ h3 {
 .s-text-link {
       text-decoration: underline;
 }
+.visually-hidden {
+  /* класс для удаления чек-бокса */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 .s-point-link {
       position: relative;
       font-size: 30px;
@@ -841,4 +854,21 @@ body::-webkit-scrollbar-thumb {
 .sp-present__present-wrap {
       width: 100%;
       height: clamp(300px, 300px + 300 * (100vw - 320px) /1080, 600px);
+}
+
+.sp-tabs__label-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--main-margin);
+}
+.sp-tabs__label-list p {
+      width: fit-content;
+      border: 1px solid white;
+      transition: border 0.4s ease;
+}
+.sp-tabs__label-list input:checked + label > p {
+      border-bottom: 1px solid var(--text-color);
+}
+.sp-tabs__content-box {
+      
 }
