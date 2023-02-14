@@ -230,34 +230,41 @@ document.addEventListener("DOMContentLoaded", function () {
       class Tab {
             constructor(input) {
                   this.radioInput = input;
-                  this.radioInputValue = input.value;
-                  this.tabContentId = "#content-" + this.radioInputValue;
-                  // console.log(this.tabContentId);
+                  this.tabContentId = "#content-" + input.value;
                   this.tabContent = document.querySelector(this.tabContentId);
-                  // console.log(this.tabContent);
-
                   this.init();
             }
             init() {
-                  this.radioInput.addEventListener("change", ()=> {
-                              // this.tabContent.style.display = "none";
-
-                        if (this.radioInput.checked) {
-                              // console.log(this.tabContent);
-                              console.log("!!!!");
-                              // this.tabContent.style.display = "flex";
-                        } else if (!this.radioInput.checked) {
-                              console.log("-----");
-
-                              // this.tabContent.style.display = "none";
-
-                        }
-                  })
+                  if(this.radioInput.checked) {
+                        this.tabContent.style.display = "flex";
+                  }
+            }
+            resetDisplay() {
+                  this.tabContent.style.display = "none";
+            }
+            switcher() {
+                  if(this.radioInput.checked) {
+                        this.tabContent.style.display = "flex";
+                  }
             }
       }
+      const allTabs = [];
       const allInput = document.querySelectorAll(".sp-tabs__label-list input");
-
-      for (let item of allInput) {
-            const newTab = new Tab(item);
+      
+      for(let item of allInput) {
+            const inputObject = new Tab(item);
+            allTabs.push(inputObject);
       }
+      for(let item of allTabs) {
+            item.radioInput.addEventListener("change", ()=> {
+                  resetAllTabsDisplay(allTabs);
+                  item.switcher();
+            })
+      }
+      function resetAllTabsDisplay(arr) {
+            for(let item of arr) {
+                  item.resetDisplay();
+            }
+      }        
 })();
+

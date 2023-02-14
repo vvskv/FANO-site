@@ -8,7 +8,7 @@
       --acсent-color: rgba(223, 192, 140, 1);
       --secondary-color: #a3b3c9;
       --text-color: #111111;
-      --background-color: F6F6F6;
+      --background-color: #F6F6F6;
       --window-background-color: rgba(255, 255, 255, 0.9);
       --gradient: linear-gradient(0deg,rgba(0, 0, 0, 0.2) 41.25%,rgba(0, 0, 0, 0) 100%);
 }
@@ -708,24 +708,12 @@ body::-webkit-scrollbar-thumb {
 .sp-header {
       position: relative;
       height: clamp(60px, 60px + 40* (100vw - 320px) / 1080, 100px);
-      /* height: 100%; */
 }
 .sp-content {
       display: flex;
       flex-direction: column;
       gap: clamp(50px, 50px + 50*(100vw - 320px)/1080, 100px)
 }
-/*.sp-content p {
-      max-width: 600px;
-      margin-right: clamp(0px, 0px + 212 * (100vw - 1100px) /300, 212px);
-}
-.sp-content__p {
-      display: flex;
-      justify-content: flex-end;
-      width: 100%;
-}*/
-
-
 .sp-content__item {
       display: flex;
       justify-content: flex-end;
@@ -756,14 +744,6 @@ body::-webkit-scrollbar-thumb {
       gap: clamp(15px, 15px + 35 * (100vw - 320px) / 1080, 50px);
 }
 
-/*.sp-content__h1 {
-      display: flex;
-      justify-content: space-between;
-      gap: 50px;
-}*/
-/*.sp-content__h1 h1 {
-      max-width: 7.5em;
-}*/
 .sp-content__one-img img{
       margin-right: clamp(0px, 0px + 212 * (100vw - 1100px) /300, 212px);
 }
@@ -862,7 +842,11 @@ body::-webkit-scrollbar-thumb {
       gap: var(--main-margin);
 }
 .sp-tabs__content-box {
-      max-width: 850px;
+      display: flex;
+/*      max-width: 850px;*/
+      justify-content: flex-end;
+      /*max-width: 600px;
+      margin-right: clamp(0px, 0px + 212 * (100vw - 1100px) /300, 212px);*/
 }
 .sp-tabs__label-list {
       display: flex;
@@ -872,15 +856,27 @@ body::-webkit-scrollbar-thumb {
 }
 .sp-tabs__label-list p {
       width: fit-content;
-      border: 1px solid white;
-      transition: border 0.4s ease;
+      border-bottom: 1px solid var(--background-color);
+      transition: border 0.2s ease;
 }
 .sp-tabs__label-list input:checked + label > p {
       border-bottom: 1px solid var(--text-color);
 }
 .sp-tabs__item {
       display: none;
-      flex-direction: column;      
+      flex-direction: column;  
+      gap: var(--main-margin);
+      max-width: 600px;
+      margin-right: clamp(0px, 0px + 212 * (100vw - 1100px) /300, 212px); 
+}
+/*.sp-tabs__item p,
+.sp-tabs__item img {
+      max-width: 600px;
+      margin-right: clamp(0px, 0px + 212 * (100vw - 1100px) /300, 212px);
+}*/
+.sp-tabs__item img {
+      max-width: 100%;
+      object-fit: cover;
 }
 .sp-tabs__label-list>#tab-normatives:checked ~ #content-normatives {
       display: flex;
