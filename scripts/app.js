@@ -268,3 +268,53 @@ document.addEventListener("DOMContentLoaded", function () {
       }        
 })();
 
+(function () {
+      "use strict";
+      class accordion {
+            constructor(div) {
+                  this.header = div.querySelector(".sp-accordion__header");
+                  this.wrap = div.querySelector(".sp-accordion__wrap");
+            }
+            close() {
+                  // this.content.style.display = "none";
+                  this.wrap.style.maxWidth = "600px";
+
+                  // this.header.classList.remove("sp-accordion__header--show");
+            }
+            show() {
+                  // this.content.style.display = "flex";
+                  this.wrap.style.maxWidth = "0";
+
+                  // this.header.classList.add("sp-accordion__header--show");
+            }
+      }
+      
+
+      const allAccordionsDiv = document.querySelectorAll(".sp-accordion__item");
+      const allAccordions = [];
+      
+      for(let item of allAccordionsDiv) {
+            const accordionObject = new accordion(item);
+            allAccordions.push(accordionObject);
+      }
+      // console.log(allAccordions);
+      // console.log(allAccordionsDiv);
+
+      for(let item of allAccordions) {
+            item.header.addEventListener("click", ()=> {
+                  // item.header.classList.toggle("sp-accordion__header--show");
+                  let checkShow = item.wrap.style.maxWidth === "0";
+                  console.log(item.wrap.style.maxWidth);
+                  if (checkShow) {
+                        item.show();
+                  } else {
+                        item.close();
+                  }
+            })
+      }
+      function resetAllAccordionsDisplay() {
+            for(let item of allAccordions) {
+                  item.close();
+            }
+      }        
+})();
