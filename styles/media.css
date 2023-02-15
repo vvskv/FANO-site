@@ -264,6 +264,7 @@
             --acсent-color: rgba(32, 58, 96, 1);
             --main-color: rgba(63, 77, 96, 1);
             --secondary-color: rgba(97, 118, 147, 1);
+            --tab-color:#525E6E;
       }
 
       .mp-study__item {

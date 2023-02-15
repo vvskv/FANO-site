@@ -11,6 +11,7 @@
       --background-color: #F6F6F6;
       --window-background-color: rgba(255, 255, 255, 0.9);
       --gradient: linear-gradient(0deg,rgba(0, 0, 0, 0.2) 41.25%,rgba(0, 0, 0, 0) 100%);
+      --tab-color: #E5E7E9;
 }
 body {
       background-color: var(--background-color);
@@ -845,14 +846,18 @@ body::-webkit-scrollbar-thumb {
       display: flex;
       justify-content: flex-end;
       width: 100%;
-/*      border-left: 1px solid var(--text-color);*/
-/*      padding: var(--main-margin);*/
+      background-color: var(--tab-color);
+/*      box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.25);*/
+/*      box-shadow: -2px 4px 4px rgba(255, 255, 255, 0.3);*/
+      z-index: 5;
+      padding: calc(var(--main-margin)*2) 2em;
+      border-radius: var(--brd-radius);
+
 }
 .sp-tabs__label-list {
       display: flex;
       flex-direction: column;
-      gap: calc(var(--main-margin)/3);
-      max-width: 400px;
+      gap: calc(var(--main-margin)/2);
 }
 .sp-tabs__label-list p {
 /*      width: fit-content;*/
@@ -861,26 +866,32 @@ body::-webkit-scrollbar-thumb {
 /*      cursor: pointer;*/
 }
 .sp-tabs__label-list label {
+      position: relative;
       display: flex;
-/*      justify-content: center;*/
       align-items: center;
-/*      width: 400px;*/
-      max-width: 400px;
-/*      height: 50px;*/
-      padding: 1em;
-      height: 5em;
+      padding: 1em 2.5em;
+/*      padding-left: 2.5em;*/
+      height: 75px;
       background-color: var(--secondary-color);
-/*      border: 1px solid var(--background-color);*/
-/*      border-right: none;*/
-/*      transition: border 0.2s ease;*/
+/*      background-color: var(--tab-color);*/
       cursor: pointer;
-
-
+      transition: all 0.2s;
+}
+.sp-tabs__label-list label::before {
+      position: absolute;
+      content: "";
+      left: -5px;
+      top: -5px;
+      border-top: 40px solid var(--background-color);
+      border-right: 40px solid transparent;
 }
 .sp-tabs__label-list input:checked + label {
-      /*border: 1px solid var(--text-color);
-      border-right: none;*/
-      background-color: var(--acсent-color);
+      background-color: var(--tab-color);
+/*      background-color: var(--acсent-color);*/
+/*      box-shadow: -2px 4px 2px rgba(0, 0, 0, 0.25);*/
+      z-index: 4;
+      transform: scale(1.1);
+      font-weight: 500;
 
 }
 .sp-tabs__item {
@@ -889,8 +900,13 @@ body::-webkit-scrollbar-thumb {
       gap: var(--main-margin);
       max-width: 600px;
       margin-right: clamp(0px, 0px + 212 * (100vw - 1100px) /300, 212px); 
+      padding: 0 0 0 2em;
+
 }
 .sp-tabs__item img {
       max-width: 100%;
       object-fit: cover;
+}
+.sp-tabs__title {
+      padding-bottom: 4em;
 }
