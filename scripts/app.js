@@ -274,18 +274,13 @@ document.addEventListener("DOMContentLoaded", function () {
             constructor(div) {
                   this.header = div.querySelector(".sp-accordion__header");
                   this.wrap = div.querySelector(".sp-accordion__wrap");
+                  this.content = div.querySelector(".sp-accordion__content");
             }
             close() {
-                  // this.content.style.display = "none";
-                  this.wrap.style.maxWidth = "600px";
-
-                  // this.header.classList.remove("sp-accordion__header--show");
+                  this.wrap.style.maxHeight = "0px";
             }
             show() {
-                  // this.content.style.display = "flex";
-                  this.wrap.style.maxWidth = "0";
-
-                  // this.header.classList.add("sp-accordion__header--show");
+                  this.wrap.style.maxHeight = `${this.content.clientHeight}px`;
             }
       }
       
@@ -297,14 +292,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const accordionObject = new accordion(item);
             allAccordions.push(accordionObject);
       }
-      // console.log(allAccordions);
-      // console.log(allAccordionsDiv);
 
       for(let item of allAccordions) {
             item.header.addEventListener("click", ()=> {
-                  // item.header.classList.toggle("sp-accordion__header--show");
-                  let checkShow = item.wrap.style.maxWidth === "0";
-                  console.log(item.wrap.style.maxWidth);
+                  item.header.classList.toggle("sp-accordion__header--show");
+                  let checkShow = item.header.classList.contains("sp-accordion__header--show");
                   if (checkShow) {
                         item.show();
                   } else {
