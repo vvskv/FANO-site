@@ -383,15 +383,19 @@
 
                   <section class="mp-news s-m-top-big">
                         <div class="container">
-                              <div class="mp-news__title">
+                              <!-- <div class="mp-news__title">
                                     <a href="">
                                           <h2>Новости</h2>
                                     </a>
-                              </div>
+                              </div> -->
 
                               <div class="mp-news__wrap">
-                                    <div class="incorrect-table"></div>
+                                    <div class="incorrect-table mp-news__table"></div>
                                     <div class="incorrect-table-warehouse">
+                                    <div class="incorrect-table__title">
+                                    <h2>Новости</h2>
+
+                        </div>
                                           <?php
                               include "php/vk_news.php";
                               ?> 

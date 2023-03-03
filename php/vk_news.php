@@ -1,7 +1,7 @@
 <?php
 $wall_id="-25334606";
 $group_id = preg_replace("/-/i", "", $wall_id);
-$count = "12";
+$count = "18";
 $token = "d967fbe5d967fbe5d967fbe541da75bb04dd967d967fbe5baa1a9e3b982da084134f66d";
 $api = file_get_contents("https://api.vk.com/api.php?oauth=1&method=wall.get&owner_id={$wall_id}&count={$count}&v=5.131&access_token={$token}");
 $wall = json_decode($api);
@@ -24,7 +24,7 @@ for ($i=0; $i < count($wall); $i++) {
     }, $text);
 
     if(isset($wall[$i]->attachments)) {
-        $img = $wall[$i]->attachments[0]->photo->sizes[1]->url;
+        $img = $wall[$i]->attachments[0]->photo->sizes[2]->url;
     }
 
     $text = preg_replace_callback('|\[id\d+\|.*\w+\s*\w*.*\]|u', function ($mathes) {
@@ -55,7 +55,7 @@ for ($i=0; $i < count($wall); $i++) {
     $date = date("Y-m-d", $wall[$i]->date);
     echo <<<EOT
     <div class="incorrect-table__item">
-    <p>$date</p>
+    <h4>$date</h4>
     <img src="$img">
     <p>{$text}</p>
     <p>{$hash_tags_str}</p>

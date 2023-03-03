@@ -48,6 +48,9 @@
             let temp = 0;
             const warehouseLength = warehouse.length;
             for (let index = 0; index < warehouseLength; index++) {
+                  if(table.classList.contains("mp-news__table") && index === 14) {
+                        break;
+                  }
                   if (index % n === 0 && index != 0) {
                         temp += n;
                   }
