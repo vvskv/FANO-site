@@ -1,6 +1,6 @@
 (function () {
       "use strict";
-      const table = document.querySelector(".sp-table");
+      const table = document.querySelector(".incorrect-table");
       const warehouse = document.querySelector(".table-warehouse").children;
       const media1100 = window.matchMedia("(max-width: 1100px)");
       const media650 = window.matchMedia("(max-width: 650px)");
@@ -58,7 +58,7 @@
       }
       function createColumn(n) {
             let column = document.createElement("div");
-            column.classList.add("sp-table__column");
+            column.classList.add("incorrect-table__column");
             column.style.width = `calc(${100 / n}% - ${(50 * (n - 1)) / n}px)`;
             table.append(column);
       }

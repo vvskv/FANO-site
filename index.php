@@ -37,6 +37,7 @@
                   type="text/javascript"
                   src="https://vk.com/js/api/openapi.js?168"
             ></script> -->
+
       </head>
 
       <body>
@@ -377,6 +378,7 @@
                         </div>
                   </section>
 
+
                   <section class="mp-news s-m-top-big">
                         <div class="container">
                               <div class="mp-news__title">
@@ -386,142 +388,13 @@
                               </div>
 
                               <div class="mp-news__wrap">
-                                    <!-- <div class="mp-news__list scroll-box">
-                                          <div class="mp-news__item">
-                                                <h3>
-                                                      История нижегородского
-                                                      альпинизма
-                                                </h3>
-
-                                                <p>
-                                                      Эта статья, написанная в
-                                                      1983 году к 60-летию
-                                                      советского альпинизма,
-                                                      рассказывает об истории
-                                                      альпинизма в Горьком,
-                                                      самых значимых
-                                                      восхождениях и о людях,
-                                                      стоявших у его истоках.
-                                                      Автор статьи - мастер
-                                                      спорта, председатель
-                                                      областной федерации
-                                                      альпинизма в те годы
-                                                      Евгений Тур. С некоторыми
-                                                      корректировками участника
-                                                      М.А. Фаддеева (выделены
-                                                      жирным курсивом) В 1933 г.
-                                                      группа молодых
-                                                      автозаводцев под
-                                                      руководством Якова
-                                                      Москалёва совершила
-                                                      восхождение на вершину
-                                                      Эльбрус. К сожалению,
-                                                      каких-либо сведений о
-                                                      дальнейших организованных
-                                                      восхождениях горьковчан мы
-                                                      не имеем, хотя в печати и
-                                                      упоминались отдельные
-                                                      имена довоенных любителей
-                                                      горных путешествий, таких
-                                                      как Лев Надеждин, Владимир
-                                                      Назаров (погибший в
-                                                      Великую Отечественную
-                                                      войну) и других.
-                                                </p>
-                                                <a href="" class="s-point-link"
-                                                      >&bull;&bull;&bull;</a
-                                                >
-                                          </div>
-
-                                          <div class="mp-news__item">
-                                                <h3>
-                                                      Разрядные нормы по
-                                                      альпинизму
-                                                </h3>
-                                                <img
-                                                      src="images/alpinism-standarts.jpg"
-                                                      alt=""
-                                                />
-                                                <a href="" class="s-point-link"
-                                                      >&bull;&bull;&bull;</a
-                                                >
-                                          </div>
-
-                                          <div class="mp-news__item">
-                                                <h3>
-                                                      Документы для УТС в
-                                                      Уллу-тау
-                                                </h3>
-                                                <p>
-                                                      Учётная карта заполнить
-                                                      необходимо ВСЕМ и прислать
-                                                      на ofso.fano@gmail.com
-                                                      Список личного снаряжения
-                                                      Также тем, кто раньше не
-                                                      присылал скан/фото
-                                                      паспорта первой страницы и
-                                                      прописки необходимо
-                                                      прислать на электронную
-                                                      почту
-                                                </p>
-                                                <a href="" class="s-point-link"
-                                                      >&bull;&bull;&bull;</a
-                                                >
-                                          </div>
-                                          <div class="mp-news__item">
-                                                <h3>Нормативы по ОФП и СФП</h3>
-                                                <img
-                                                      src="images/o-f-p.jpg"
-                                                      alt=""
-                                                />
-                                                <p>
-                                                      НП - начальная подготовка
-                                                      (новичок, значок
-                                                      "Альпинист России,
-                                                      выполнение норм 3 разряда)
-                                                      СП - спортивная подготовка
-                                                      (3 спортивный разряд по
-                                                      альпинизму, выполнение
-                                                      норм 2 разряда) СС -
-                                                      спортивное
-                                                      совершенствование (2
-                                                      спортивный разряд по
-                                                      альпинизму, выполнение
-                                                      норм 1 разряда) СМ -
-                                                      спортивное мастерство (1
-                                                      разряд по альпинизму и
-                                                      выше)
-                                                </p>
-                                                <a href="" class="s-point-link"
-                                                      >&bull;&bull;&bull;</a
-                                                >
-                                          </div>
-                                    </div> -->
-
-                                    <!-- <div class="mp-news__vk">
-                                          <div
-                                                class="vk__background lazy"
-                                                id="id-bg-lazy"
-                                          ></div>
-
-                                          <div id="vk_groups"></div>
-                                          <script async type="text/javascript">
-                                                VK.Widgets.Group(
-                                                      "vk_groups",
-
-                                                      {
-                                                            mode: 4,
-                                                            wide: 1,
-                                                            width: 300,
-                                                            height: 600,
-                                                            color1: "FFFFFF",
-                                                            color2: "000000",
-                                                            color3: "617693",
-                                                      },
-                                                      25334606
-                                                );
-                                          </script>
-                                    </div> -->
+                                    <div class="incorrect-table"></div>
+                                    <div class="table-warehouse">
+                                          <?php
+                              include "php/vk_news.php";
+                              ?> 
+                                    </div>
+                              
                               </div>
                         </div>
                   </section>
@@ -583,5 +456,7 @@
             </footer>
 
             <script src="scripts/app.js"></script>
+            <script src="scripts/loadtable.js" defer></script>
+
       </body>
 </html>

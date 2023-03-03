@@ -58,7 +58,7 @@
       .mp-news__list {
             grid-template-columns: auto;
       }
-      .sp-table__title {
+      .incorrect-table__title {
             height: 150px;
       }
 }
@@ -152,10 +152,10 @@
       .db-reports__title {
             max-width: 400px;
       }
-      .sp-table__title {
+      .incorrect-table__title {
             height: 100%;
       }
-      .sp-table__column {
+      .incorrect-table__column {
             gap: clamp(40px, 40px + 35 * (100vw - 320px) / 330  , 75px);
       }
 }
