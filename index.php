@@ -33,10 +33,10 @@
                   type="image/svg+xml"
             />
 
-            <script
+            <!-- <script
                   type="text/javascript"
                   src="https://vk.com/js/api/openapi.js?168"
-            ></script>
+            ></script> -->
       </head>
 
       <body>
@@ -386,7 +386,7 @@
                               </div>
 
                               <div class="mp-news__wrap">
-                                    <div class="mp-news__list scroll-box">
+                                    <!-- <div class="mp-news__list scroll-box">
                                           <div class="mp-news__item">
                                                 <h3>
                                                       История нижегородского
@@ -496,9 +496,9 @@
                                                       >&bull;&bull;&bull;</a
                                                 >
                                           </div>
-                                    </div>
+                                    </div> -->
 
-                                    <div class="mp-news__vk">
+                                    <!-- <div class="mp-news__vk">
                                           <div
                                                 class="vk__background lazy"
                                                 id="id-bg-lazy"
@@ -521,7 +521,7 @@
                                                       25334606
                                                 );
                                           </script>
-                                    </div>
+                                    </div> -->
                               </div>
                         </div>
                   </section>
