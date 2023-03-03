@@ -37,6 +37,8 @@
                   type="text/javascript"
                   src="https://vk.com/js/api/openapi.js?168"
             ></script> -->
+            <script src="scripts/loadtable.js" defer></script>
+
 
       </head>
 
@@ -389,7 +391,7 @@
 
                               <div class="mp-news__wrap">
                                     <div class="incorrect-table"></div>
-                                    <div class="table-warehouse">
+                                    <div class="incorrect-table-warehouse">
                                           <?php
                               include "php/vk_news.php";
                               ?> 
@@ -456,7 +458,6 @@
             </footer>
 
             <script src="scripts/app.js"></script>
-            <script src="scripts/loadtable.js" defer></script>
 
       </body>
 </html>

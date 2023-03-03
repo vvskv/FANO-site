@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // (function () {
 //       "use strict";
 //       const table = document.querySelector(".incorrect-table");
-//       const warehouse = document.querySelector(".table-warehouse").children;
+//       const warehouse = document.querySelector(".incorrect-table-warehouse").children;
 //       const media1100 = window.matchMedia("(max-width: 1100px)");
 //       const media650 = window.matchMedia("(max-width: 650px)");
 //       let numberOfColumns = 3;

@@ -1,7 +1,7 @@
 <?php
 $wall_id="-25334606";
 $group_id = preg_replace("/-/i", "", $wall_id);
-$count = "20";
+$count = "12";
 $token = "d967fbe5d967fbe5d967fbe541da75bb04dd967d967fbe5baa1a9e3b982da084134f66d";
 $api = file_get_contents("https://api.vk.com/api.php?oauth=1&method=wall.get&owner_id={$wall_id}&count={$count}&v=5.131&access_token={$token}");
 $wall = json_decode($api);
@@ -59,7 +59,6 @@ for ($i=0; $i < count($wall); $i++) {
     <img src="$img">
     <p>{$text}</p>
     <p>{$hash_tags_str}</p>
-    <a href="" class="s-point-link">&bull;&bull;&bull;</a>
     </div>
 EOT;
     }    
