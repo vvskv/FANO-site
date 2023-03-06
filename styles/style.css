@@ -961,10 +961,12 @@ body::-webkit-scrollbar-thumb {
 .sp-accordion__content h4 {
       margin-bottom: calc(0px - var(--main-margin)/2);
 }
+
+
 .download-list {
       display: flex;
-      flex-direction: column;
-      gap: var(--main-margin);
+      /* flex-direction: column; */
+      /* gap: var(--main-margin); */
 }
 .download-list li {
       display: flex;
