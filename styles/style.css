@@ -965,8 +965,14 @@ body::-webkit-scrollbar-thumb {
 
 .download-list {
       display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: var(--main-margin);
+      row-gap: var(--main-margin);
       /* flex-direction: column; */
+      /* justify-content: space-between; */
       /* gap: var(--main-margin); */
+      /* flex-wrap: wrap; */
 }
 .download-list li {
       display: flex;
@@ -975,7 +981,8 @@ body::-webkit-scrollbar-thumb {
       background-color: var(--dark-main-color);
       border-radius: var(--brd-radius);
       padding: 2em;
-      width: 400px;
+      min-width: 300px;
+      /* width: 400px; */
       height: 50px;
 }
 .download-list a {
