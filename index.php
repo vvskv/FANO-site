@@ -37,6 +37,9 @@
                   type="text/javascript"
                   src="https://vk.com/js/api/openapi.js?168"
             ></script> -->
+            <script type="text/javascript">
+                  const arrHeight = '<?php $arr_height;?>'
+            </script>
             <script src="scripts/loadtable.js" defer></script>
 
 

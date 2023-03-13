@@ -1,14 +1,17 @@
 <?php
 $wall_id="-25334606";
 $group_id = preg_replace("/-/i", "", $wall_id);
-$count = "18";
+$count = "30";
 $token = "d967fbe5d967fbe5d967fbe541da75bb04dd967d967fbe5baa1a9e3b982da084134f66d";
 $api = file_get_contents("https://api.vk.com/api.php?oauth=1&method=wall.get&owner_id={$wall_id}&count={$count}&v=5.131&access_token={$token}");
 $wall = json_decode($api);
 $wall = $wall->response->items;
 
+$arr_height = [];
+
 for ($i=0; $i < count($wall); $i++) {
-    if(isset($wall[$i]->copy_history)) {
+    $attach_no_img = $wall[$i]->attachments[0]->type === "video";
+    if(isset($wall[$i]->copy_history) || $attach_no_img) {
         continue;
     } else {
     $text = $wall[$i]->text;
@@ -25,6 +28,13 @@ for ($i=0; $i < count($wall); $i++) {
 
     if(isset($wall[$i]->attachments)) {
         $img = $wall[$i]->attachments[0]->photo->sizes[2]->url;
+        $img_height = $wall[$i]->attachments[0]->photo->sizes[2]->height;
+    }
+
+    if(isset($img_height)) {
+        array_push($arr_height, $img_height);
+    } else {
+        array_push($arr_height, 0);
     }
 
     $text = preg_replace_callback('|\[id\d+\|.*\w+\s*\w*.*\]|u', function ($mathes) {
