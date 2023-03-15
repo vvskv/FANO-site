@@ -5,7 +5,6 @@
       const media1100 = window.matchMedia("(max-width: 1100px)");
       const media650 = window.matchMedia("(max-width: 650px)");
       let numberOfColumns = 3;
-      console.log('<?php echo "$arr_height"; ?>');
 
 
       if (window.innerWidth > 1100) {

@@ -10,32 +10,35 @@ $wall = $wall->response->items;
 $arr_height = [];
 
 for ($i=0; $i < count($wall); $i++) {
+    // условие, что вложения не картинка
     $attach_no_img = $wall[$i]->attachments[0]->type === "video";
     if(isset($wall[$i]->copy_history) || $attach_no_img) {
         continue;
     } else {
-    $text = $wall[$i]->text;
-    $smile_pattern = '/([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?/u';
-    $smile_pattern_with_mark = '/[!,.?]\s*(([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?)/u';
-    $smile_pattern_without_mark = '/\w\s*(([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?)/u';
-    
-    $hash_tags = array();
-    $text = preg_replace_callback('/#\w+/u', function ($mathes) {
-        global $hash_tags;
-        array_push($hash_tags, $mathes[0]);
-        return '';
-    }, $text);
+        $text = $wall[$i]->text;
+        // регулярки для смайликов
+        $smile_pattern = '/([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?/u';
+        $smile_pattern_with_mark = '/[!,.?]\s*(([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?)/u';
+        $smile_pattern_without_mark = '/\w\s*(([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?)/u';
+        
+        // перенос хеш-тегов в отдельный массив
+        $hash_tags = array();
+        $text = preg_replace_callback('/#\w+/u', function ($mathes) {
+            global $hash_tags;
+            array_push($hash_tags, $mathes[0]);
+            return '';
+        }, $text);
 
-    if(isset($wall[$i]->attachments)) {
-        $img = $wall[$i]->attachments[0]->photo->sizes[2]->url;
-        $img_height = $wall[$i]->attachments[0]->photo->sizes[2]->height;
-    }
-
-    if(isset($img_height)) {
-        array_push($arr_height, $img_height);
-    } else {
-        array_push($arr_height, 0);
-    }
+        if(isset($wall[$i]->attachments)) {
+            $img = $wall[$i]->attachments[0]->photo->sizes[2]->url;
+            $img_height = $wall[$i]->attachments[0]->photo->sizes[2]->height;
+        }
+        // заполнение массива размера картинок
+        if(isset($img_height)) {
+            array_push($arr_height, $img_height);
+        } else {
+            array_push($arr_height, 0);
+        }
 
     $text = preg_replace_callback('|\[id\d+\|.*\w+\s*\w*.*\]|u', function ($mathes) {
         $mathes[0] = preg_replace('|\[id\d+\||', "", $mathes[0]);
@@ -63,6 +66,7 @@ for ($i=0; $i < count($wall); $i++) {
 
     $hash_tags_str = join($hash_tags, " ");
     $date = date("Y-m-d", $wall[$i]->date);
+
     echo <<<EOT
     <div class="incorrect-table__item">
     <h4>$date</h4>
@@ -73,3 +77,5 @@ for ($i=0; $i < count($wall); $i++) {
 EOT;
     }    
 }
+?>
+<div class="data-php" data-attr="<?=$arr_height?>"></div>
