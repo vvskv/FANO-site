@@ -78,4 +78,4 @@ EOT;
     }    
 }
 ?>
-<div class="data-php" data-attr="<?=$arr_height?>"></div>
+<div class="data-php" data-attr="<?=json_encode($arr_height)?>"></div>
