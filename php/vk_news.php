@@ -7,19 +7,32 @@ $api = file_get_contents("https://api.vk.com/api.php?oauth=1&method=wall.get&own
 $wall = json_decode($api);
 $wall = $wall->response->items;
 
-$arr_height = [];
+
+// регулярки для смайликов
+$smile_pattern = '/([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?/u';
+$smile_pattern_with_mark = '/[!,.?]\s*(([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?)/u';
+$smile_pattern_without_mark = '/\w\s*(([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?)/u';
+$link_pattern = '/http\S+/';
+
+$arr_height = []; // Массив с размерами картинок
 
 for ($i=0; $i < count($wall); $i++) {
-    // условие, что вложения не картинка
+    // Условие, что вложения не картинка
+    $attachments = $wall[$i]->attachments;
+    $arr_links = [];
+    foreach ($attachments as &$item) {
+        if($item->type === "link") {
+            array_push($arr_links, $item->link->url);
+            unset($item);
+        }
+    }
     $attach_no_img = $wall[$i]->attachments[0]->type === "video";
+
     if(isset($wall[$i]->copy_history) || $attach_no_img) {
         continue;
     } else {
-        $text = $wall[$i]->text;
-        // регулярки для смайликов
-        $smile_pattern = '/([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?/u';
-        $smile_pattern_with_mark = '/[!,.?]\s*(([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?)/u';
-        $smile_pattern_without_mark = '/\w\s*(([0-9#][\x{20E3}])|[\x{00ae}\x{00a9}\x{203C}\x{2047}\x{2048}\x{2049}\x{3030}\x{303D}\x{2139}\x{2122}\x{3297}\x{3299}][\x{FE00}-\x{FEFF}]?|[\x{2190}-\x{21FF}][\x{FE00}-\x{FEFF}]?|[\x{2300}-\x{23FF}][\x{FE00}-\x{FEFF}]?|[\x{2460}-\x{24FF}][\x{FE00}-\x{FEFF}]?|[\x{25A0}-\x{25FF}][\x{FE00}-\x{FEFF}]?|[\x{2600}-\x{27BF}][\x{FE00}-\x{FEFF}]?|[\x{2900}-\x{297F}][\x{FE00}-\x{FEFF}]?|[\x{2B00}-\x{2BF0}][\x{FE00}-\x{FEFF}]?|[\x{1F000}-\x{1F6FF}][\x{FE00}-\x{FEFF}]?)/u';
+        // $text = $wall[$i]->text;
+        $text = editText($wall[$i]->text);
         
         // перенос хеш-тегов в отдельный массив
         $hash_tags = array();
@@ -39,6 +52,32 @@ for ($i=0; $i < count($wall); $i++) {
         } else {
             array_push($arr_height, 0);
         }
+
+
+    $hash_tags_str = join($hash_tags, " ");
+    $date = date("Y-m-d", $wall[$i]->date);
+
+    echo <<<EOT
+    <div class="incorrect-table__item">
+    <h4>$date</h4>
+    <img src="$img">
+    <p>{$text}</p>
+EOT;
+        if(!empty($arr_links)) {
+            foreach ($arr_links as $link) {
+                echo "<a href=\"$link\">$link</a>";
+            }
+        }
+        echo "<p>$hash_tags_str</p>
+        </div>";
+    }    
+}
+
+function editText($text) {
+    global $smile_pattern;
+    global $smile_pattern_with_mark;
+    global $smile_pattern_without_mark;
+    global $link_pattern;
 
     $text = preg_replace_callback('|\[id\d+\|.*\w+\s*\w*.*\]|u', function ($mathes) {
         $mathes[0] = preg_replace('|\[id\d+\||', "", $mathes[0]);
@@ -64,18 +103,8 @@ for ($i=0; $i < count($wall); $i++) {
         return $mathes[0];
     }, $text);
 
-    $hash_tags_str = join($hash_tags, " ");
-    $date = date("Y-m-d", $wall[$i]->date);
-
-    echo <<<EOT
-    <div class="incorrect-table__item">
-    <h4>$date</h4>
-    <img src="$img">
-    <p>{$text}</p>
-    <p>{$hash_tags_str}</p>
-    </div>
-EOT;
-    }    
-}
+    $text = preg_replace($link_pattern, "", $text);
+    return $text;
+};
 ?>
 <div class="data-php" data-attr="<?=json_encode($arr_height)?>"></div>
