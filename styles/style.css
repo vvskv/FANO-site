@@ -759,8 +759,10 @@ body::-webkit-scrollbar-thumb {
       max-height: 500px;
       object-fit: cover;
 }
-.incorrect-table-warehouse > div {
+.incorrect-table-warehouse > div{
       display: none;
+      /* visibility: hidden;
+      z-index: -100; */
 }
 
 .incorrect-table {
