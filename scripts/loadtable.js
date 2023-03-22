@@ -6,12 +6,13 @@
       const media650 = window.matchMedia("(max-width: 650px)");
       // получение массива с размера картинок
       const strHeightImg = document.querySelector(".data-php").getAttribute("data-attr");
-      let arrHeightImg = JSON.parse(strHeightImg);
-      arrHeightImg.unshift(0);
-      arrHeightImg.push(0);
+      let arrImgRatio = JSON.parse(strHeightImg);
+      arrImgRatio.unshift(0);
+      arrImgRatio.push(0);
 
-      // console.log(arrHeightImg);
-      // console.log(warehouse);
+      const warehouseMap = getWarehouse([...warehouse]);
+
+      // console.log(getWarehouse([...warehouse], arrImgRatio));
 
       if (window.innerWidth > 1100) {
             fillingColumn(3);
@@ -47,10 +48,10 @@
                         maxCountItem = 7;                       
                         break;
                   case 3:
-                        maxCountItem = 15;                    
+                        maxCountItem = 11;                    
                         break;
                   default:
-                        maxCountItem = 15;                        
+                        maxCountItem = 11;                        
                         break;
             }
             table.innerHTML = "";
@@ -65,23 +66,50 @@
                         column: column,
                   }
             })
-
-            const warehouseLength = warehouse.length;
+            const warehouseLength = warehouseMap.length;
             for (let index = 0; index < warehouseLength; index++) {
                   let curCol = getMinColumn(tableColumnsMap); //Добавляем в колонку мин размера
+                  let curItem = warehouseMap[index];
+                  const curItemHtml = curCol.column.appendChild(curItem.item.cloneNode(true));
+                  curItemHtml.style.display = 'flex';
+                  // curItemHtml.style.display = 'flex';
+                  
+                  if(curItem.size === null) {
+                        if(arrImgRatio[index]===0) {
+                              curItem.size = curItemHtml.offsetHeight;
+                        // console.log(curItem.size); 
 
-                  const curItem = curCol.column.appendChild(warehouse[index].cloneNode(true));
-                  curItem.style.display = 'flex';
-                  let itemHeight = curItem.offsetHeight; //Размер добавляемого поста (без изображения)
-                  const itemHeightAll = itemHeight + arrHeightImg[index];// Полный размер поста
-                  console.log(itemHeight, arrHeightImg[index], itemHeightAll); 
-                  curCol.size += itemHeightAll;
+                        } else {
+                              const widthCurCol = curCol.column.offsetWidth;
+                        let curIgmHeight = widthCurCol / arrImgRatio[index];
+                        curIgmHeight = curIgmHeight > 500 ? 500 : curIgmHeight;
+                        curItem.size = curItemHtml.offsetHeight + curIgmHeight;
+                        // console.log(curIgmHeight); 
+                        }
+                  }
+                  curCol.size +=curItem.size;
+
                   if(index > maxCountItem && table.classList.contains("mp-news__table")) {
                         const maxColSize = getMaxColumn(tableColumnsMap).size;
                         const minColSize = getMinColumn(tableColumnsMap).size;
-                        if (maxColSize - minColSize + 150 < itemHeightAll) break;
+                        console.log(maxColSize, minColSize, warehouseMap[index].size);
+                        if (maxColSize - minColSize + 100 < warehouseMap[index].size) break;
                   }
             }
+      }
+
+      function getWarehouse(warehouse) {
+            const warehouseMap = warehouse.map(item=> {
+                  return {
+                        size: null,
+                        item: item,
+                  }
+            })
+            for (let i = 0; i < warehouse.length; i++) {
+                  const element = warehouse[i];  
+                  warehouseMap[i].item = element;
+            }
+            return warehouseMap;
       }
 
       function getMinColumn(arr) {

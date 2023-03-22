@@ -99,6 +99,11 @@ h4 {
 .s-text-link {
       text-decoration: underline;
 }
+.s-vk-news-link {
+      cursor: pointer;
+      color: var(--main-colormain-color);
+      font-weight: 500;
+}
 .visually-hidden {
   /* класс для удаления чек-бокса */
   position: absolute;
@@ -759,10 +764,9 @@ body::-webkit-scrollbar-thumb {
       max-height: 500px;
       object-fit: cover;
 }
+
 .incorrect-table-warehouse > div{
       display: none;
-      /* visibility: hidden;
-      z-index: -100; */
 }
 
 .incorrect-table {
