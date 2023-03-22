@@ -17,13 +17,14 @@ $link_pattern = '/http\S+/';
 $arr_height = []; // Массив с размерами картинок
 
 for ($i=0; $i < count($wall); $i++) {
-    // Условие, что вложения не картинка
     $attachments = $wall[$i]->attachments;
+
     $arr_links = [];
     foreach ($attachments as &$item) {
         if($item->type === "link") {
-            array_push($arr_links, $item->link->url);
-            unset($item);
+            $link = $item->link->url;
+            $desc = $item->link->description;
+            $arr_links[$desc] = $link;
         }
     }
     $attach_no_img = $wall[$i]->attachments[0]->type === "video";
@@ -31,8 +32,7 @@ for ($i=0; $i < count($wall); $i++) {
     if(isset($wall[$i]->copy_history) || $attach_no_img) {
         continue;
     } else {
-        // $text = $wall[$i]->text;
-        $text = editText($wall[$i]->text);
+        $text = $wall[$i]->text;
         
         // перенос хеш-тегов в отдельный массив
         $hash_tags = array();
@@ -42,12 +42,17 @@ for ($i=0; $i < count($wall); $i++) {
             return '';
         }, $text);
 
+        $text = editText($text);
+
         if(isset($wall[$i]->attachments)) {
             $img = $wall[$i]->attachments[0]->photo->sizes[2]->url;
             $img_height = $wall[$i]->attachments[0]->photo->sizes[2]->height;
         }
         // заполнение массива размера картинок
         if(isset($img_height)) {
+            if($img_height > 500) {
+                $img_height = 500;
+            }
             array_push($arr_height, $img_height);
         } else {
             array_push($arr_height, 0);
@@ -64,10 +69,12 @@ for ($i=0; $i < count($wall); $i++) {
     <p>{$text}</p>
 EOT;
         if(!empty($arr_links)) {
-            foreach ($arr_links as $link) {
-                echo "<a href=\"$link\">$link</a>";
+            foreach ($arr_links as $desc => $link) {
+                $desc = $desc === ""? "Ссылка": $desc; 
+                echo "<a href=\"$link\"><p>$desc</p></a>";
             }
         }
+
         echo "<p>$hash_tags_str</p>
         </div>";
     }    

@@ -37,7 +37,22 @@
             }
       });
       
-      function fillingColumn(n, m) {
+      function fillingColumn(n) {
+            let maxCountItem;
+            switch (n) {
+                  case 1:
+                        maxCountItem = 5;                        
+                        break;
+                  case 2:
+                        maxCountItem = 7;                       
+                        break;
+                  case 3:
+                        maxCountItem = 15;                    
+                        break;
+                  default:
+                        maxCountItem = 15;                        
+                        break;
+            }
             table.innerHTML = "";
             for (let index = 0; index < n; index++) {
                   createColumn(n);
@@ -53,25 +68,18 @@
 
             const warehouseLength = warehouse.length;
             for (let index = 0; index < warehouseLength; index++) {
-                  let curCol = getMinColumn(tableColumnsMap); //Колонка минимального размера
-                  // let item = warehouse[index].cloneNode(true);
-                  // curCol.column.append(warehouse[index].cloneNode(true));
-                  // curCol.column.append(item.style.display = "flex");
+                  let curCol = getMinColumn(tableColumnsMap); //Добавляем в колонку мин размера
 
-
-                  // warehouse[index].style.display = 'flex';
-                  let itemHeight = warehouse[index].offsetHeight; //Размер добавляемого поста (без изображения)
-                  // warehouse[index].style.display = 'none';
-                  curCol.column.append(warehouse[index].cloneNode(true));
-
-                  console.log(itemHeight);
-
-                  const itemHeightAll = itemHeight + arrHeightImg[index]; // Полный размер поста
+                  const curItem = curCol.column.appendChild(warehouse[index].cloneNode(true));
+                  curItem.style.display = 'flex';
+                  let itemHeight = curItem.offsetHeight; //Размер добавляемого поста (без изображения)
+                  const itemHeightAll = itemHeight + arrHeightImg[index];// Полный размер поста
+                  console.log(itemHeight, arrHeightImg[index], itemHeightAll); 
                   curCol.size += itemHeightAll;
-                  if(index > 10 && table.classList.contains("mp-news__table")) {
+                  if(index > maxCountItem && table.classList.contains("mp-news__table")) {
                         const maxColSize = getMaxColumn(tableColumnsMap).size;
                         const minColSize = getMinColumn(tableColumnsMap).size;
-                        if (maxColSize - minColSize + 150< itemHeightAll) break;
+                        if (maxColSize - minColSize + 150 < itemHeightAll) break;
                   }
             }
       }
