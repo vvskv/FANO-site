@@ -87,12 +87,19 @@
                         // console.log(curIgmHeight); 
                         }
                   }
+                  //Добавление gap расстояния к высоте колонки
+                  if(curCol.size != 0) {
+                        if(n === 3) {
+                              curCol.size += 100;
+                        } else {
+                              curCol.size += 50;
+                        }
+                  }
                   curCol.size +=curItem.size;
-
                   if(index > maxCountItem && table.classList.contains("mp-news__table")) {
                         const maxColSize = getMaxColumn(tableColumnsMap).size;
                         const minColSize = getMinColumn(tableColumnsMap).size;
-                        console.log(maxColSize, minColSize, warehouseMap[index].size);
+                        // console.log(maxColSize, minColSize, warehouseMap[index].size);
                         if (maxColSize - minColSize + 100 < warehouseMap[index].size) break;
                   }
             }
