@@ -54,6 +54,11 @@
         </ul>
       </div>
 
+      <?php
+    require_once '../php/db-pathes.php';
+      ?>
+      
+
       <!-- <div class="sp-pathes-grid">
         <div class="sp-content">
           <h2>Маршруты</h2>

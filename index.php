@@ -109,7 +109,7 @@
                                                                   >
                                                             </li>
                                                             <li>
-                                                                  <a href="pages/db-pathes.html"
+                                                                  <a href="pages/db-pathes.php"
                                                                         >Маршруты</a
                                                                   >
                                                             </li>
