@@ -5,8 +5,8 @@
       const media1100 = window.matchMedia("(max-width: 1100px)");
       const media650 = window.matchMedia("(max-width: 650px)");
       // получение массива с размера картинок
-      const strHeightImg = document.querySelector(".data-php").getAttribute("data-attr");
-      let arrImgRatio = JSON.parse(strHeightImg);
+      const strIgmRatio = document.querySelector(".data-php").getAttribute("data-attr");
+      let arrImgRatio = JSON.parse(strIgmRatio);
       arrImgRatio.unshift(0);
       arrImgRatio.push(0);
 
@@ -39,6 +39,7 @@
       });
       
       function fillingColumn(n) {
+            // console.log(n);
             let maxCountItem;
             switch (n) {
                   case 1:
@@ -72,20 +73,43 @@
                   let curItem = warehouseMap[index];
                   const curItemHtml = curCol.column.appendChild(curItem.item.cloneNode(true));
                   curItemHtml.style.display = 'flex';
-                  // curItemHtml.style.display = 'flex';
-                  
+                  // console.log('flex');
+
+                  // const curItemHtmlImg = curItemHtml.querySelector('img');
+                  // curItemHtmlImg.src = curItemHtmlImg.getAttribute("data-src");
+
+                  // console.log(curItem.size);
                   if(curItem.size === null) {
                         if(arrImgRatio[index]===0) {
                               curItem.size = curItemHtml.offsetHeight;
+                              // console.log("test");
                         // console.log(curItem.size); 
 
                         } else {
-                              const widthCurCol = curCol.column.offsetWidth;
-                        let curIgmHeight = widthCurCol / arrImgRatio[index];
-                        curIgmHeight = curIgmHeight > 500 ? 500 : curIgmHeight;
-                        curItem.size = curItemHtml.offsetHeight + curIgmHeight;
-                        // console.log(curIgmHeight); 
+                              // Добавляем путь загрузки из атрибута
+                              const curItemHtmlImg = curItemHtml.querySelector('img');
+                              // console.log('add src');
+                              // console.log(curItemHtmlImg.getAttribute("data-src"));
+                              curItemHtmlImg.src = curItemHtmlImg.getAttribute("data-src");
+                              // console.log(curItemImg.complete);
+                              // Если изображения уже загружены, то размер поста - offset, если нет, то добавляется размер из соотношения
+                              if(curItemHtmlImg.complete) {
+                                    curItem.size = curItemHtml.offsetHeight;
+                              } else {
+                                    const widthCurCol = curCol.column.offsetWidth;
+                                    let curIgmHeight = widthCurCol / arrImgRatio[index];
+                                    curIgmHeight = curIgmHeight > 500 ? 500 : curIgmHeight;
+                                    curItem.size = curItemHtml.offsetHeight + curIgmHeight;
+                                    // console.log(curItem.size); 
+                              }
                         }
+                  } else {
+                        if(arrImgRatio[index] != 0) {
+                             const curItemHtmlImg = curItemHtml.querySelector('img');
+                              curItemHtmlImg.src = curItemHtmlImg.getAttribute("data-src");  
+                        }
+                        
+                        
                   }
                   //Добавление gap расстояния к высоте колонки
                   if(curCol.size != 0) {

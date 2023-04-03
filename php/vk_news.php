@@ -63,7 +63,7 @@ for ($i=0; $i < count($wall); $i++) {
     echo <<<EOT
     <div class="incorrect-table__item">
     <h4>$date</h4>
-    <img src="$img">
+    <img data-src="$img">
     <p>{$text}</p>
 EOT;
         if(!empty($arr_links)) {
