@@ -1006,7 +1006,16 @@ body::-webkit-scrollbar-thumb {
 .sp-pathes-grid {
       display: flex;
       justify-content: space-between;
-      /*display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: var(--main-margin);*/
+}
+/*---------------reports------------ */
+.reports-content {
+      display: flex;
+      flex-direction: column;
+      width: 600px;
+}
+.reports-content__separator {
+      text-align: center;
+      /* display: block; */
+      margin-top: 50px;
+      margin-bottom: 50px;
 }
