@@ -1011,7 +1011,28 @@ body::-webkit-scrollbar-thumb {
 .reports-content {
       display: flex;
       flex-direction: column;
-      width: 600px;
+      gap: 50px;
+      align-items: flex-start;
+      /* width: 600px; */
+}
+.reports-content p {
+      max-width: 600px;
+}
+.reports-content img {
+      display: block;
+      width: auto;
+      height: auto;
+}
+.reports-content__title {
+display: flex;
+justify-content: space-between;
+/* align-items: center; */
+}
+.reports-content__title h1 {
+      width: 50%;
+}
+.reports-content__title i {
+      align-self: flex-end;
 }
 .reports-content__separator {
       text-align: center;
