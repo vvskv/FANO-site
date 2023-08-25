@@ -749,6 +749,17 @@ body::-webkit-scrollbar-thumb {
       display: grid;
       grid-template-columns: auto auto auto;
       column-gap: clamp(10px, 10px + 40*(100vw - 320px)/1080, 50px);
+      row-gap: clamp(10px, 10px + 40*(100vw - 320px)/1080, 50px);
+}
+.sp-content__three-img--puzzle1 {
+      grid-template-areas: 
+      "A C C"
+      "B C C";
+}
+.sp-content__three-img--puzzle2 {
+      grid-template-areas: 
+      "A A C"
+      "B B C";
 }
 .sp-content__three-img img {
       height: 100%;
@@ -756,6 +767,19 @@ body::-webkit-scrollbar-thumb {
 .sp-content img {
       max-width: 100%;
       object-fit: cover;
+}
+.sp-content__img-with-desc {
+      /* display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem; */
+}
+.sp-content__two-img div,
+.sp-content__three-img div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
 }
 
 .incorrect-table__item {
