@@ -93,8 +93,14 @@ h4 {
 .s-m-top-medium {
       margin-top: clamp(75px, 75px + 75 * (100vw - 320px) / 1080, 150px);
 }
+.s-m-top-small {
+      margin-top: clamp(10px, 10px + 15 * (100vw - 320px) / 1080, 25px);
+}
 .fw-600 {
       font-weight: 600;
+}
+.s-italic-text {
+      font-style: italic;
 }
 .s-text-link {
       text-decoration: underline;
@@ -710,10 +716,9 @@ body::-webkit-scrollbar-thumb {
 .sp-content__title h1 {
       max-width: 7.5em;
 }
-.sp-content__title p {
-/*      width: 100vw;*/
+.sp-content__title p,
+.sp-content__title i {
       max-width: 400px;
-/*min-width: 600px;*/
 }
 .sp-content__title > h1 + p {
       margin-top: clamp(15px, 15px + 60 * (100vw - 320px) / 1080, 75px);
@@ -722,8 +727,8 @@ body::-webkit-scrollbar-thumb {
 .sp-content__title-and-content {
       display: flex;
       justify-content: space-between;
-      gap: 50px;
-      gap: clamp(15px, 15px + 35 * (100vw - 320px) / 1080, 50px);
+      /* gap: 50px; */
+      gap: clamp(35px, 35px + 15 * (100vw - 320px) / 1080, 50px);
 }
 
 .sp-content__one-img img{
@@ -1007,6 +1012,8 @@ body::-webkit-scrollbar-thumb {
       display: flex;
       justify-content: space-between;
 }
+
+
 /*---------------reports------------ */
 .reports-content {
       display: flex;
@@ -1035,8 +1042,9 @@ justify-content: space-between;
       align-self: flex-end;
 }
 .reports-content__separator {
+      display: none;
       text-align: center;
       /* display: block; */
-      margin-top: 50px;
-      margin-bottom: 50px;
+      /* margin-top: 50px;
+      margin-bottom: 50px; */
 }
