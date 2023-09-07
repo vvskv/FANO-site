@@ -129,6 +129,18 @@
                         </p>
                   </div>
                   <div class="sp-content__three-img sp-content__three-img--puzzle2">
+                        <!-- <figure style="grid-area: A;">
+                              <img src="../images/reports/report-001/07.jpg" alt="">
+                              <figcaption>Отель «Иткол»</figcaption>
+                        </figure>
+                        <figure style="grid-area: B;">
+                              <img src="../images/reports/report-001/09.jpg" alt="">
+                              <figcaption>Схема Ушбинского Плато. Красная линия – маршрут на пик Щуровского с Ушбинского плато.</figcaption>
+                        </figure>
+                        <figure style="grid-area: C;">
+                              <img src="../images/reports/report-001/08.jpg" alt="">
+                              <figcaption>Ушбинский ледопад. Слева – стены пика Щуровского. Внизу на морене – Немецкие ночёвки.</figcaption>
+                        </figure> -->
                         <div style="grid-area: A;">
                               <img src="../images/reports/report-001/07.jpg" alt="">
                               <p>Отель «Иткол»</p>
