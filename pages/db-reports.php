@@ -62,16 +62,10 @@
                   <div class="sp-content__item">
                         <p>По этой причине мы с Александром решили улучшить свою скалолазную подготовку. Для этого мы выкроили в начале мая недельный отпуск и отправились в Крым. В том далёком прошлом с Крымом никак проблем не было. Самолет до Симферополя стоил дёшево. Далее на автобусе мы поехали до хорошо известного массива Кушка-Айя.</p>
                   </div>
-
-
-
-
-
-
-                  <div class="sp-content__three-img">
-                        <img src="../images/reports/report-001/01.jpg" alt="">
-                        <img src="../images/reports/report-001/02.jpg" alt="">
-                        <img src="../images/reports/report-001/03.jpg" alt="">
+                  <div class="sp-content__three-img sp-content__three-img--puzzle3">
+                        <img src="../images/reports/report-001/01.jpg" alt="" style="grid-area: A">
+                        <img src="../images/reports/report-001/02.jpg" alt="" style="grid-area: B">
+                        <img src="../images/reports/report-001/03.jpg" alt="" style="grid-area: C">
 
                   </div>
                   <div class="sp-content__item">
@@ -168,15 +162,19 @@
                         </p>
                   </div>
 
-                  <div class="sp-content__two-img">
-                        <div>
+                  <div class="sp-content__two-img sp-content__two-img--with-title">
+                        <img src="../images/reports/report-001/10.jpg" alt="">
+                        <img src="../images/reports/report-001/11.jpg" alt="">
+                        <p>«Зеркало» Северной Ушбы.</p>
+                        <p>«Приют одиннадцати». На заднем плане – Главный Кавказский хребет.</p>
+                        <!-- <div>
                               <img src="../images/reports/report-001/10.jpg" alt="">
                               <p>«Зеркало» Северной Ушбы.</p>
                         </div>
                         <div>
                               <img src="../images/reports/report-001/11.jpg" alt="">
                               <p>«Приют одиннадцати». На заднем плане – Главный Кавказский хребет.</p>
-                        </div>
+                        </div> -->
                   </div>
                   <div class="sp-content__item">
                         <p>
@@ -209,15 +207,19 @@
                               Потом начало светать. Прекрасная погода позволила наблюдать удивительное зрелище: тень Эльбрус в воздухе (см.фото). Наши клиенты восторгались и восклицали: «Fantastisch!»
                         </p>
                   </div>
-                  <div class="sp-content__two-img">
-                        <div>
+                  <div class="sp-content__two-img sp-content__two-img--with-title">
+                        <img src="../images/reports/report-001/12.jpg" alt="">
+                        <img src="../images/reports/report-001/13.jpg" alt="">
+                        <p>Тень Эльбруса в воздухе</p>
+                        <p>Первый луч Солнца</p>
+                        <!-- <div>
                               <img src="../images/reports/report-001/12.jpg" alt="">
                               <p>Тень Эльбруса в воздухе</p>
                         </div>
                         <div>
                               <img src="../images/reports/report-001/13.jpg" alt="">
                               <p>Первый луч Солнца</p>
-                        </div>
+                        </div> -->
                   </div>
                   <div class="sp-content__item">
                         <p>Потом из-за фирнового склона вырвался первый луч солнца. Внизу из моря облаков выглядывали вершины только самых высоких гор. <br> <br>
@@ -243,15 +245,20 @@
                   </div>
 
                   <span class="reports-content__separator">***</span>
-                  <div class="sp-content__two-img">
-                        <div>
+                  <div class="sp-content__two-img sp-content__two-img--with-title">
+                        <img src="../images/reports/report-001/14.jpg" alt="">
+                        <img src="../images/reports/report-001/15.jpg" alt="">
+                        <p>В седловине у хижины</p>
+                        <p>Маршрут Абалакова на вершину Накра. Слева – Донгуз-Орун</p>
+
+                        <!-- <div>
                               <img src="../images/reports/report-001/14.jpg" alt="">
                               <p>В седловине у хижины</p>
                         </div>
                         <div>
                               <img src="../images/reports/report-001/15.jpg" alt="">
                               <p>Маршрут Абалакова на вершину Накра. Слева – Донгуз-Орун</p>
-                        </div>
+                        </div> -->
                   </div>
                   <div class="sp-content__item">
                         <p>
@@ -265,15 +272,19 @@
                   </div>
 
                   <span class="reports-content__separator">***</span>
-                  <div class="sp-content__two-img">
-                        <div>
+                  <div class="sp-content__two-img sp-content__two-img--with-title">
+                        <img src="../images/reports/report-001/16.jpg" alt="">
+                        <img src="../images/reports/report-001/17.jpg" alt="">
+                        <p>Пик Вольная Испания.</p>
+                        <p>Александр Павленко в своей любимой пуховой куртке</p>
+                        <!-- <div>
                               <img src="../images/reports/report-001/16.jpg" alt="">
                               <p>Пик Вольная Испания.</p>
                         </div>
                         <div>
                               <img src="../images/reports/report-001/17.jpg" alt="">
                               <p>Александр Павленко в своей любимой пуховой куртке</p>
-                        </div>
+                        </div> -->
                   </div>
                   <div class="sp-content__item">
                         <p>
