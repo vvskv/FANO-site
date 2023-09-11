@@ -245,9 +245,11 @@
                   </div>
 
                   <span class="reports-content__separator">***</span>
-                  <div class="sp-content__two-img sp-content__two-img--with-title">
-                        <img src="../images/reports/report-001/14.jpg" alt="">
-                        <img src="../images/reports/report-001/15.jpg" alt="">
+                  <div class="sp-content__two-img sp-content__two-img--with-title sp-content__two-img--puzzle1">
+                        <!-- <div class="sp-content__line-img"> -->
+
+                        <img src="../images/reports/report-001/14.jpg" alt="" style="grid-area: A;">
+                        <img src="../images/reports/report-001/15.jpg" alt="" style="grid-area: B;">
                         <p>В седловине у хижины</p>
                         <p>Маршрут Абалакова на вершину Накра. Слева – Донгуз-Орун</p>
 

@@ -774,6 +774,9 @@ body::-webkit-scrollbar-thumb {
       grid-template-areas: 
       "A A B C";
 }
+.sp-content__two-img--puzzle1 {
+      grid-template-areas: "A B B";
+}
 .sp-content__three-img img {
       height: 100%;
 }
