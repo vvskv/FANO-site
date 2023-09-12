@@ -61,9 +61,6 @@
       .incorrect-table__title {
             height: 150px;
       }
-      .sp-content__three-img {
-            g
-      }
 }
 @media (max-width: 980px) {
       .sp-content__title-and-content {
@@ -161,6 +158,26 @@
       .incorrect-table__column {
             gap: clamp(40px, 40px + 35 * (100vw - 320px) / 330  , 75px);
       }
+      .sp-content__three-img--puzzle3 {
+            grid-template-areas: 
+            "A A"
+            "B C";
+      }
+      .sp-content__three-img--puzzle1 {
+            grid-template-areas: 
+            "A B"
+            "C C";
+      }
+      .sp-content__three-img--puzzle2 {
+            grid-template-areas: 
+            "A"
+            "B"
+            "C";
+      }
+      .sp-content__two-img--with-title {
+            grid-template-rows: repeat(4, auto);
+            grid-template-columns: auto;
+      }
 }
 @media (max-width: 560px) {
       .mp-study__list {
@@ -196,6 +213,7 @@
       .menu {
             gap: 2em;
       }
+
 }
 @media (max-width: 460px) {
       .footer-main__text > .s-text-link {

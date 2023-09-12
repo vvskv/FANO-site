@@ -693,7 +693,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-
+/* Second page content */
 .sp-header {
       position: relative;
       height: clamp(60px, 60px + 40* (100vw - 320px) / 1080, 100px);
@@ -748,6 +748,7 @@ body::-webkit-scrollbar-thumb {
       grid-template-rows: auto auto;
       row-gap: clamp(10px, 10px + 10*(100vw - 320px)/1080, 20px);
       justify-items: center;
+      grid-auto-flow: column;
 }
 .sp-content__two-img img {
       height: 100%;
@@ -775,13 +776,14 @@ body::-webkit-scrollbar-thumb {
       "A A B C";
 }
 .sp-content__two-img--puzzle1 {
-      grid-template-areas: "A B B";
+      grid-template-columns: 1fr 2fr;
 }
 .sp-content__three-img img {
       height: 100%;
 }
 .sp-content img {
       max-width: 100%;
+      width: 100%;
       object-fit: cover;
 }
 .sp-content__img-with-desc {

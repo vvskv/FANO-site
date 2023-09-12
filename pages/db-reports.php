@@ -51,17 +51,13 @@
                                           Работа в МАЛ «Кавказ» предусматривала не только восхождение на Эльбрус. Приезжих иностранных альпинистов интересовали самые разные горы Приэльбрусья со скальными и ледовыми стенам. Тренер-спасатель МАЛа должен быть готовым работать на любых маршрутах.
                                     </p>
                               </div>
-
-
-
-
                         </div>
-
                   </div>
-                  <span class="reports-content__separator">***</span>
+
                   <div class="sp-content__item">
                         <p>По этой причине мы с Александром решили улучшить свою скалолазную подготовку. Для этого мы выкроили в начале мая недельный отпуск и отправились в Крым. В том далёком прошлом с Крымом никак проблем не было. Самолет до Симферополя стоил дёшево. Далее на автобусе мы поехали до хорошо известного массива Кушка-Айя.</p>
                   </div>
+
                   <div class="sp-content__three-img sp-content__three-img--puzzle3">
                         <img src="../images/reports/report-001/01.jpg" alt="" style="grid-area: A">
                         <img src="../images/reports/report-001/02.jpg" alt="" style="grid-area: B">
@@ -105,7 +101,6 @@
                         </div>
                   </div>
 
-                  <span class="reports-content__separator">***</span>
                   <div class="sp-content__item">
                         <p>
                               Летом 1981 года основная база МАЛ «Кавказ» располагалась в отеле «Иткол». Нам с Сашей было многое удивительно. Ночевали мы в уютном 2-местном номере, а не в протекающей палатке. Мягкие кровати вместо потрёпаного спального мешка. Харчевались мы в зале ресторана. Кормили очень калорийно, на обед давали пиво, на ужине – бутыль сухого вина на двоих. Ясно, что такая благость длилась недолго… Надо было отрабатывать этот комфорт.
@@ -164,8 +159,8 @@
 
                   <div class="sp-content__two-img sp-content__two-img--with-title">
                         <img src="../images/reports/report-001/10.jpg" alt="">
-                        <img src="../images/reports/report-001/11.jpg" alt="">
                         <p>«Зеркало» Северной Ушбы.</p>
+                        <img src="../images/reports/report-001/11.jpg" alt="">
                         <p>«Приют одиннадцати». На заднем плане – Главный Кавказский хребет.</p>
                         <!-- <div>
                               <img src="../images/reports/report-001/10.jpg" alt="">
@@ -197,7 +192,6 @@
                               В годы работы МАЛ «Кавказ» иностранных клиентов поселяли в VIP-этаже. Там же размещались работники (инструкторы, переводчики, врач).
                         </p>
                   </div>
-                  <span class="reports-content__separator">***</span>
 
                   <div class="sp-content__item">
                         <p>
@@ -209,8 +203,9 @@
                   </div>
                   <div class="sp-content__two-img sp-content__two-img--with-title">
                         <img src="../images/reports/report-001/12.jpg" alt="">
-                        <img src="../images/reports/report-001/13.jpg" alt="">
                         <p>Тень Эльбруса в воздухе</p>
+
+                        <img src="../images/reports/report-001/13.jpg" alt="">
                         <p>Первый луч Солнца</p>
                         <!-- <div>
                               <img src="../images/reports/report-001/12.jpg" alt="">
@@ -244,13 +239,13 @@
                         </p>
                   </div>
 
-                  <span class="reports-content__separator">***</span>
                   <div class="sp-content__two-img sp-content__two-img--with-title sp-content__two-img--puzzle1">
                         <!-- <div class="sp-content__line-img"> -->
 
                         <img src="../images/reports/report-001/14.jpg" alt="" style="grid-area: A;">
-                        <img src="../images/reports/report-001/15.jpg" alt="" style="grid-area: B;">
                         <p>В седловине у хижины</p>
+
+                        <img src="../images/reports/report-001/15.jpg" alt="" style="grid-area: B;">
                         <p>Маршрут Абалакова на вершину Накра. Слева – Донгуз-Орун</p>
 
                         <!-- <div>
@@ -273,7 +268,6 @@
                         </p>
                   </div>
 
-                  <span class="reports-content__separator">***</span>
                   <div class="sp-content__two-img sp-content__two-img--with-title">
                         <img src="../images/reports/report-001/16.jpg" alt="">
                         <img src="../images/reports/report-001/17.jpg" alt="">
@@ -302,7 +296,6 @@
                         </p>
                   </div>
 
-                  <span class="reports-content__separator">***</span>
             </div>
 
             <div class="incorrect-table"></div>
