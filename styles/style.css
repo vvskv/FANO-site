@@ -714,7 +714,7 @@ body::-webkit-scrollbar-thumb {
 .sp-content__chapter img {
       /* max-height: 600px; */
 }
-.sp-content__chapter::after {
+.sp-content > .sp-content__chapter:not(:last-of-type)::after {
       content: "* * *";
       display: block;
 }
